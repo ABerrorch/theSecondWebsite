@@ -92,12 +92,13 @@ class AdminBase extends Base{
             ],[   "header"=>"项目课题管理",
                 "flag"=>"<i class='fa fa-cog'></i>",
                 "container"=>[
-                    ["name"=>"项目管理","url"=>'Admin/Project/index'],
+//                    ["name"=>"项目管理","url"=>'Admin/Project/index'],
                     ["name"=>"课题管理","url"=>'Admin/Research/index'],
-                    ["name"=>"课题文件批量管理","url"=>'Admin/Listfile/batch_file_list_person'],
+//                    ["name"=>"课题文件批量管理","url"=>'Admin/Listfile/batch_file_list_person'],
                 ],
             ],
         ];
+
 
         # 判断Main Navbar 中的某些链接是否有权限，如果没有权限就删除
         for($i = count($MainNav) - 1;$i >= 0;$i--){

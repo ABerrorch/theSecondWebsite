@@ -68,6 +68,7 @@
                         <!--实际的导航栏定义在Adminbase中-->
                         {volist name="MainNav" id = "nav"}
                         <li>
+                            {if sizeof($nav['container']) > 1}
                             <a href="#">
                                 {$nav.flag}
                                 <span class="menu-title"><strong>{$nav.header}</strong></span>
@@ -79,6 +80,18 @@
                                 <li><a href="{$vo.url}">{$vo.name}</a></li>
                                 {/volist}
                             </ul>
+                            {else}
+                                <a href="{$nav['container'][0]['url']}">
+                                    {$nav.flag}
+                                    <span class="menu-title"><strong>{$nav.header}</strong></span>
+                                    <!--<i class="arrow"></i>-->
+                                </a>
+                                <!--<ul class="collapse">-->
+                                    <!--{volist name="nav.container" id = "vo"}-->
+                                    <!--<li><a href="{$vo.url}">{$vo.name}</a></li>-->
+                                    <!--{/volist}-->
+                                <!--</ul>-->
+                            {/if}
                         </li>
                         {/volist}
                     </ul>
