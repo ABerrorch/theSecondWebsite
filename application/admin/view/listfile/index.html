@@ -1,0 +1,111 @@
+<!--这个模板是Listfile/index模板,用于显示资源列表-->
+{include file="common/body_up"/}
+	<div id="container" class="effect aside-float aside-bright mainnav-lg">
+		{include file="common/navbar"/}
+		<div class="boxed">
+
+			<!--CONTENT CONTAINER-->
+			<!--===================================================-->
+			<div id="content-container">
+
+				<!--Page Title-->
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<div id="page-title"></div>
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<!--End page title-->
+
+
+				<!--Breadcrumb-->
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<ol class="breadcrumb">
+					<li><a href="{:url('Admin/Index/index')}">首页</a></li>
+					<li><a href="#">{$title|default="设置模板默认值"}</a></li>
+					<li class="active">{$subtitle}</li>
+				</ol>
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<!--End breadcrumb-->
+				<div class="col-sm-12">
+					<div class="panel">
+						<!--Data Table-->
+						<!--===================================================-->
+						<div class="panel-heading">
+							<h3 class="panel-title" style="vertical-align: center">
+								资料列表
+								<div style="float: right;margin: auto;padding: auto;">
+									<a class="btn btn-info btn-default-basic" href="{:url('admin/Listfile/batch_file_list_admin')}">
+									批量下载
+									</a>
+									<button class="btn btn-primary btn-default-basic"
+											onclick="uploadFileModal('{:url('admin/Listfile/add_file')}','','{$file_type|default="public"}')"
+									> 添加资料</button>
+								</div>
+							</h3>
+						</div>
+						<div class="panel panel-info">
+							<!--<div class="panel-heading" style="border-radius: 5px;margin: 17px;"><h3>我的文章</h3></div>-->
+							<div class="panel-body">
+								<table  class="table table-bordered table-hover">
+									<thead>
+									<tr>
+										<th width="5%">ID</th>
+										<th width="15%">文件名</th>
+										<th width="5%">类别</th>
+										<th width="45%">说明</th>
+										<th width="10%">上传时间</th>
+										<th width="10%">上传者</th>
+										<th width="10%">操作</th>
+									</tr>
+									</thead>
+									<tbody>
+									{volist name = "data" id = "vo" }
+									<tr>
+										<td>{$vo.id}</td>
+										<td>{$vo.filename|default="未知"}</td>
+										<td>{$vo.type}</td>
+										<td>{$vo.abstract|default="没有简介"}</td>
+										<td>{$vo.datetime}</td>
+										<td>{$vo.author}</td>
+										<td>
+											<a type="button" class="btn btn-success btn-xs btn-rounded" href="{:url('Admin/Listfile/download_file',['id'=>$vo.id])}">下载</a>
+											<a type="button" class="btn btn-danger  btn-xs btn-rounded"
+											   onclick="fileDeleteConfirm{$vo['id']}()">删除</a>
+											<script>
+                                                function fileDeleteConfirm{$vo['id']}() {
+                                                    if(confirm('确认删除这个资源？'))
+                                                        location="{:url('Admin/Listfile/del_file',array('id'=>$vo['id']))}"
+                                                }
+											</script>
+											<!--下面这里的JS语句应该有问题,大概是因为引号出现混乱,等我学完JS之后再改&nbsp;-->
+											<!--<a  type="button" class="btn btn-danger  btn-xs btn-rounded" href="javascript:if(confirm('确认删除这篇文章？'))location='{:url('Admin/Article/del_art',array('id'=>$vo['id']))}'">  删除  </a>-->
+										</td>
+									</tr>
+									{/volist}
+									</tbody>
+								</table>
+								<!--下面这个东西就是选择栏-->
+								<!--我也不知道原理,反正如果从数据库里读取数据的时候使用pageinate得到的变量,就能用这个东西-->
+								<!--查文档查不到原理,绝望-->
+								{$data->render()}
+							</div>
+						</div>
+						<!--===================================================-->
+						<!--End Data Table-->
+
+					</div>
+				</div>
+			</div>
+			<!--===================================================-->
+			<!--END CONTENT CONTAINER-->
+
+			{include file="common/mainnav"/}
+		</div>
+		{include file="common/footer"/}
+	</div>
+
+
+<!--上传文件模态框-->
+{include file="common/uploadFileModal"/}
+<!--上传文件模态框-->
+
+
+{include file="common/body_down"/}

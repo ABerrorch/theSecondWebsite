@@ -1,0 +1,112 @@
+{include file="common/body_up"/}
+
+<div id="container" class="effect aside-float aside-bright mainnav-lg">
+    {include file="common/navbar"/}
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+
+            <!--&lt;!&ndash;Breadcrumb&ndash;&gt;-->
+            <!--<ol class="breadcrumb">-->
+                <!--<li><a href="{:url('Admin/Index/index')}">首页</a></li>-->
+                <!--<li><a href="#">{$title|default="设置模板默认值"}</a></li>-->
+                <!--<li class="active">{$subtitle}</li>-->
+            <!--</ol>-->
+            <!--&lt;!&ndash;End breadcrumb&ndash;&gt;-->
+
+
+            <!--layui-nav-->
+            <div id = "layui-navbar" class="col-sm-12">
+                <ul class="layui-nav layui-bg-green">
+                    <li class="layui-nav-item {if $function=='index'}layui-this{/if}">
+                        <a href="{:url('admin/project/project_edit',['project_id'=>$project.id,'function'=>'index'])}">
+                            项目管理
+                        </a>
+                    </li>
+                    <li class="layui-nav-item {if $function=='file'}layui-this{/if}">
+                        <a href="{:url('admin/project/project_edit',['project_id'=>$project.id,'function'=>'file'])}">
+                            项目文件
+                        </a>
+                    </li>
+                    <li class="layui-nav-item {if $function=='conf'}layui-this{/if}">
+                        <a href="{:url('admin/project/project_edit',['project_id'=>$project.id,'function'=>'conf'])}">
+                            项目会议
+                        </a>
+                    </li>
+                    <li class="layui-nav-item {if $function=='hist'}layui-this{/if}">
+                        <a>会议历史</a>
+                        <dl class="layui-nav-child">
+                            {volist name = "conference" id = "vo" }
+                            <dd>
+                                <a href="{:url('admin/project/project_edit',['project_id'=>$project.id,'function'=>'hist','conference_id'=>$vo.id])}">
+                                    {$vo.name}
+                                </a>
+                            </dd>
+                            {/volist}
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <!--end layui-nav-->
+
+
+
+            {if $function == 'file'}
+                {include file="project/pjt_edit_files_module"/}
+            {elseif $function == 'conf'/}
+                {include file="project/pjt_edit_conf_module"/}
+            {elseif $function == 'hist'/}
+                {include file="project/pjt_edit_hist_module"/}
+            {else/}
+                {include file="project/pjt_edit_index_module"/}
+            {/if}
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+        {include file="common/mainnav"/}
+    </div>
+    {include file="common/footer"/}
+</div>
+
+<!--对layui导航栏的监听-->
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+
+<!--实现teammate不能点击部分按钮 开始-->
+{if $authority < 2}
+<script>
+    //teammate视角
+    $(document).ready(function () {
+        var items=["btn-warning","btn-danger","btn-primary"];
+        for(let i in items){
+            let mid = $('.'+items[i]);
+            mid.prop('action','#');
+            mid.prop('onclick','#');
+            mid.prop('href','#');
+            mid.attr('disabled','disabled');
+
+            mid.attr('data-toggle','modal');
+            mid.attr('data-target','#');
+            mid.addClass('btn-default');
+            mid.removeClass(items[i]);
+        }
+    });
+</script>
+{/if}
+<!--实现teammate不能点击部分按钮 结束-->
+
+
+{include file="common/body_down"/}

@@ -1,0 +1,292 @@
+﻿<!--这个模板是控制台,是为了首页设计的.-->
+{include file="common/body_up"/}
+<div id="container" class="effect aside-float aside-bright mainnav-lg">
+    {include file="common/navbar"/}
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+
+            <!--Page Title-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <div id="page-title">
+                <!--<h1 class="page-header text-overflow">这里可以写page-title,虽然我感觉没什么用</h1>-->
+                <ol class="breadcrumb">
+                    <li><a href="/Admin/index/index.html">首页</a></li>
+                    <li>{$title}</li>
+                    <li class="active">{$subtitle}</li>
+                </ol>
+                <!--<div class="searchbox">-->
+                <!--<div class="input-group custom-search-form">-->
+                <!--<input type="text" class="form-control" placeholder="假的搜索框">-->
+                <!--<span class="input-group-btn">-->
+                <!--<button class="text-muted" type="button"><i class="demo-pli-magnifi-glass"></i></button>-->
+                <!--</span>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End page title-->
+            <div class="col-sm-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">使用说明</h3>
+                    </div>
+                    <!--使用说明-->
+                    <div class="panel-body">
+                        <p>
+                            这里是本系统的使用说明，请在第一次使用本系统的时候阅读。
+                            <br>
+                            首先不要使用360浏览器。360浏览器对JS的支持有一些局限，可能导致一些错误
+                        </p>
+                        <hr>
+                        <p>
+                            一、个人信息<br><br>
+                            个人信息、登出按钮以及个人所拥有的权限可以点击左上角的用户名处获得。<br><br>
+                            个人账号不分大小写
+                        </p>
+                        <hr>
+                        <p>
+                            二、基本权限<br><br>
+                            本系统的基本权限大体上包括三个级别<br><br>
+                            1. 管理员<br>
+                            拥有几乎所有权限<br><br>
+                            2. 高级用户<br>
+                            在管理员的基础上，不能使用左侧导航栏中的“高级权限”部分<br>
+                            出于为了防止误操作的考虑，关闭了高级用户删除项目的权限<br><br>
+                            3. 一般用户<br>
+                            在高级用户的基础上，不能使用“项目创建”功能，不能作为项目管理员或者课题管理员。<br><br>
+                        </p>
+                        <hr>
+                        <p>
+                            三、课题项目管理<br><br>
+                            1. 课题和项目都有相应的管理员，分别称为课题管理员和项目管理员，管理员能够使用最全面的功能。<br><br>
+                            2. 除了管理员，课题和项目还包括成员。相对于管理员，成员只能使用部分功能。<br><br>
+                            3. 用户只能看见自己所属的课题和项目<br><br>
+                            详细情况请点击左侧导航栏观察。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">服务器配置</h3>
+                    </div>
+
+                    <!-- Striped Table -->
+                    <!--===================================================-->
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr>
+                                    <td>网站域名</td>
+                                    <td>{$_SERVER['HTTP_HOST']}</td>
+                                </tr>
+                                <tr>
+                                    <td>网站目录</td>
+                                    <td>{$_SERVER['DOCUMENT_ROOT']}</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器端口</td>
+                                    <td>{$_SERVER['SERVER_PORT']}</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器环境</td>
+                                    <td>{$_SERVER['SERVER_SOFTWARE']}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--===================================================-->
+                    <!-- End Striped Table -->
+
+                </div>
+            </div>
+
+            <!--Page content-->
+            <!--===================================================-->
+            <div id="page-content">
+                <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                <!--<div class="panel">-->
+                <!--<div class="panel-heading">-->
+                <!--<h3 class="panel-title">Order Status</h3>-->
+                <!--</div>-->
+
+                <!--&lt;!&ndash;Data Table&ndash;&gt;-->
+                <!--&lt;!&ndash;===================================================&ndash;&gt;-->
+                <!--<div class="panel-body">-->
+                <!--<div class="pad-btm form-inline">-->
+                <!--<div class="row">-->
+                <!--<div class="col-sm-6 table-toolbar-left">-->
+                <!--<button class="btn btn-purple"><i class="demo-pli-add icon-fw"></i>Add</button>-->
+                <!--<button class="btn btn-default"><i class="demo-pli-printer"></i></button>-->
+                <!--<div class="btn-group">-->
+                <!--<button class="btn btn-default"><i class="demo-pli-information"></i></button>-->
+                <!--<button class="btn btn-default"><i class="demo-pli-recycling"></i></button>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6 table-toolbar-right">-->
+                <!--<div class="form-group">-->
+                <!--<input type="text" autocomplete="off" class="form-control" placeholder="Search" id="demo-input-search2">-->
+                <!--</div>-->
+                <!--<div class="btn-group">-->
+                <!--<button class="btn btn-default"><i class="demo-pli-download-from-cloud"></i></button>-->
+                <!--<div class="btn-group">-->
+                <!--<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">-->
+                <!--<i class="demo-pli-gear"></i>-->
+                <!--<span class="caret"></span>-->
+                <!--</button>-->
+                <!--<ul class="dropdown-menu dropdown-menu-right" role="menu">-->
+                <!--<li><a href="#">Action</a></li>-->
+                <!--<li><a href="#">Another action</a></li>-->
+                <!--<li><a href="#">Something else here</a></li>-->
+                <!--<li class="divider"></li>-->
+                <!--<li><a href="#">Separated link</a></li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="table-responsive">-->
+                <!--<table class="table table-striped">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                <!--<th>Invoice</th>-->
+                <!--<th>User</th>-->
+                <!--<th>Order date</th>-->
+                <!--<th>Amount</th>-->
+                <!--<th class="text-center">Status</th>-->
+                <!--<th class="text-center">Tracking Number</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                <!--<td><a href="#" class="btn-link"> {$_SERVER['HTTP_HOST']}</a></td>-->
+                <!--<td>Steve N. Horton</td>-->
+                <!--<td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 22, 2014</span></td>-->
+                <!--<td>$45.00</td>-->
+                <!--<td class="text-center">-->
+                <!--<div class="label label-table label-success">Paid</div>-->
+                <!--</td>-->
+                <!--<td class="text-center">-</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td><a href="#" class="btn-link"> Order #53432</a></td>-->
+                <!--<td>Charles S Boyle</td>-->
+                <!--<td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 24, 2014</span></td>-->
+                <!--<td>$245.30</td>-->
+                <!--<td class="text-center">-->
+                <!--<div class="label label-table label-info">Shipped</div>-->
+                <!--</td>-->
+                <!--<td class="text-center"><i class="fa fa-plane"></i> CGX0089734531</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td><a href="#" class="btn-link"> Order #53433</a></td>-->
+                <!--<td>Lucy Doe</td>-->
+                <!--<td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 24, 2014</span></td>-->
+                <!--<td>$38.00</td>-->
+                <!--<td class="text-center">-->
+                <!--<div class="label label-table label-info">Shipped</div>-->
+                <!--</td>-->
+                <!--<td class="text-center"><i class="fa fa-plane"></i> CGX0089934571</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td><a href="#" class="btn-link"> Order #53434</a></td>-->
+                <!--<td>Teresa L. Doe</td>-->
+                <!--<td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 15, 2014</span></td>-->
+                <!--<td>$77.99</td>-->
+                <!--<td class="text-center">-->
+                <!--<div class="label label-table label-info">Shipped</div>-->
+                <!--</td>-->
+                <!--<td class="text-center"><i class="fa fa-plane"></i> CGX0089734574</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td><a href="#" class="btn-link"> Order #53435</a></td>-->
+                <!--<td>Teresa L. Doe</td>-->
+                <!--<td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 12, 2014</span></td>-->
+                <!--<td>$18.00</td>-->
+                <!--<td class="text-center">-->
+                <!--<div class="label label-table label-success">Paid</div>-->
+                <!--</td>-->
+                <!--<td class="text-center">-</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td><a href="#" class="btn-link">Order #53437</a></td>-->
+                <!--<td>Charles S Boyle</td>-->
+                <!--<td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 17, 2014</span></td>-->
+                <!--<td>$658.00</td>-->
+                <!--<td class="text-center">-->
+                <!--<div class="label label-table label-danger">Refunded</div>-->
+                <!--</td>-->
+                <!--<td class="text-center">-</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td><a href="#" class="btn-link">Order #536584</a></td>-->
+                <!--<td>Scott S. Calabrese</td>-->
+                <!--<td><span class="text-muted"><i class="fa fa-clock-o"></i> Oct 19, 2014</span></td>-->
+                <!--<td>$45.58</td>-->
+                <!--<td class="text-center">-->
+                <!--<div class="label label-table label-warning">Unpaid</div>-->
+                <!--</td>-->
+                <!--<td class="text-center">-</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+                <!--</table>-->
+                <!--</div>-->
+                <!--<hr>-->
+                <!--<div class="pull-right">-->
+                <!--<ul class="pagination text-nowrap mar-no">-->
+                <!--<li class="page-pre disabled">-->
+                <!--<a href="#">&lt;</a>-->
+                <!--</li>-->
+                <!--<li class="page-number active">-->
+                <!--<span>1</span>-->
+                <!--</li>-->
+                <!--<li class="page-number">-->
+                <!--<a href="#">2</a>-->
+                <!--</li>-->
+                <!--<li class="page-number">-->
+                <!--<a href="#">3</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<span>...</span>-->
+                <!--</li>-->
+                <!--<li class="page-number">-->
+                <!--<a href="#">9</a>-->
+                <!--</li>-->
+                <!--<li class="page-next">-->
+                <!--<a href="#">&gt;</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;===================================================&ndash;&gt;-->
+                <!--&lt;!&ndash;End Data Table&ndash;&gt;-->
+
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--===================================================-->
+            <!--End page content-->
+
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+        {include file="common/mainnav"/}
+    </div>
+    {include file="common/footer"/}
+</div>
+{include file="common/body_down"/}
+
+

@@ -1,0 +1,139 @@
+﻿{include file="common/body_up"/}
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        {include file="common/navbar"/}
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+
+
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+
+
+                    <!-- <hr class="new-section-sm bord-no"> -->
+
+                    <div class="panel widget">
+                        <div class="widget-header bg-purple">
+                            <img class="widget-bg img-responsive" src="{$Think.config.web_root}/img/thumbs/img3.jpg" alt="Image">
+                        </div>
+                        <div class="widget-body text-center">
+                            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="{$Think.config.web_root}/img/profile-photos/9.png">
+                            <h4 class="mar-no text-main">{$Think.session.user.username}</h4>
+                            <p class="text-muted mar-no">{$Think.session.user.email}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3"></div>
+
+                    <div class="col-lg-6">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">个人资料</h3>
+                            </div>
+
+
+                            <!--Input Size-->
+                            <!--===================================================-->
+                            <form class="form-horizontal" method="post" action="change_msg">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="demo-is-inputsmall">用户名</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" placeholder="用户名" class="form-control input-sm" id="demo-is-inputsmall" value="{$Think.session.user.username}" name="username"readonly>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="demo-is-inputnormal" class="col-sm-3 control-label">密码</label>
+                                        <div class="col-sm-6">
+                                            <input type="password" placeholder="如果为空表示不修改密码" class="form-control" id="demo-is-inputnormal" name="password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordConfirm" class="col-sm-3 control-label">密码确认</label>
+                                        <div class="col-sm-6">
+                                            <input type="password" placeholder="如果修改密码，这里键入密码确认" class="form-control" id="passwordConfirm" name="passwordConfirm">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">邮箱</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" placeholder="E-mail" class="form-control" value="{$Think.session.user.email}" name="email" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">手机</label>
+                                        <div class="col-sm-6 ">
+                                            <input type="text" placeholder="电话号码" class="form-control" value="{$Think.session.user.phone}" name="phone" required="required">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-sm-9 col-sm-offset-3">
+                                            <button class="btn btn-warning btn-rounded" type="submit" >修改</button>
+                                            <!-- <button class="btn btn-info btn-rounded" type="reset">重置</button> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--===================================================-->
+                            <!--End Input Size-->
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+            {include file="common/mainnav"/}
+        </div>
+        {include file="common/footer"/}
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#change_msg").click(function(){
+                // alert("hahah ");
+                username = $("input[name='username']").val();
+                password = $("input[name='password']").val();
+                email = $("input[name='email']").val();
+                phone = $("input[name='phone']").val();
+                var data={
+                    username:username,
+                    password:password,
+                    email:email,
+                    phone:phone,
+                };
+                // layer.alert('内容');
+                console.log(data);
+
+                $.ajax({
+                    type: "POST",
+                    url: "change_msg",
+                    data: data,
+                    dataType: "json",
+                    success: function(data){
+                        if (data.code==0) {
+                            layer.alert('修改成功、前往登录页面');
+                            location.href='{:url("Home/Index/index")}';
+                        }else{
+                            layer.alert('没有更改任何东西');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{include file="common/body_down"/}

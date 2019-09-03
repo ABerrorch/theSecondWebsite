@@ -1,0 +1,195 @@
+﻿<!--rule_group.-->
+{include file="common/body_up"/}
+<div id="container" class="effect aside-float aside-bright mainnav-lg">
+    {include file="common/navbar"/}
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+
+            <!--Page Title-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <div id="page-title">
+
+            </div>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End page title-->
+
+
+            <!--Breadcrumb-->
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <ol class="breadcrumb">
+                <li><a href="{:url('Admin/Index/index')}">首页</a></li>
+                <li><a href="#">{$title}</a></li>
+                <li class="active">{$subtitle}</li>
+            </ol>
+            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+            <!--End breadcrumb-->
+
+            <div class="panel">
+                <!-- <div class="panel-heading">
+                    <h3 class="panel-title">Sample Toolbar</h3>
+                </div> -->
+
+                <!--Data Table-->
+                <!--===================================================-->
+                <div class="panel-body">
+                    <div class="pad-btm form-inline">
+                        <div class="row">
+                            <div class="col-sm-6 table-toolbar-left">
+                                <button id="demo-btn-addrow" class="btn btn-mint" onclick="add()">新增角色</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>角色名称</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {foreach name="data" id="v"}
+                            <tr>
+                                <td>{$v['title']}</td>
+                                <td>
+                                    <a href="javascript:;" ruleId="{$v['id']}" ruleTitle="{$v['title']}" onclick="edit(this)">修改名称</a> |
+                                    <a href="javascript:if(confirm('确定删除？'))location='{:url('Admin/Rule/delete_group',array('id'=>$v['id']))}'">删除角色</a> |
+                                    <a href="{:url('Admin/Rule/rule_distribution',array('id'=>$v['id']))}">分配权限</a>
+                                </td>
+                            </tr>
+                            {/foreach}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--===================================================-->
+                <!--End Data Table-->
+
+            </div>
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+        {include file="common/mainnav"/}
+    </div>
+    {include file="common/footer"/}
+</div>
+<!-- 添加菜单模态框开始 -->
+<div class="modal fade" id="thinkright-add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新增角色
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline" action="{:url('Admin/Rule/add_group')}" method="post">
+                    <div class="form-group">
+                        <label for="demo-inline-inputmail" class="sr-only">角色名：</label>
+                        <input type="text" placeholder="请输入角色"  id="demo-inline-inputmail" class="form-control" name="title" required="required">
+                    </div>
+                    <button class="btn btn-primary" type="submit">添加</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 添加菜单模态框结束 -->
+
+<!-- 修改菜单模态框开始 -->
+<div class="modal fade" id="thinkright-edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    修改名称
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="bjy-form" class="form-inline" action="{:url('Admin/Rule/edit_group')}" method="post">
+                    <input type="hidden" name="id">
+                    <table class="table table-striped table-bordered table-hover table-condensed">
+                        <tr>
+                            <th width="12%">规则名</th>
+                            <td>
+                                <input class="form-control" type="text" name="title" required="required">
+                            </td>
+                            <td>
+                                <input class="btn btn-success" type="submit" value="修改">
+
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改菜单模态框结束 -->
+
+<!-- 给角色添加用户开始 -->
+<div class="modal fade" id="thinkright-adduser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    添加成员
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline" action="{:url('Admin/Rule/add_user')}" method="post">
+                    <div class="form-group">
+                        <label for="demo-inline-inputmail" class="sr-only">成员名：</label>
+                        <input type="text" placeholder="请输入角色的成员"  id="demo-inline-inputmail" class="form-control" name="title" required="required">
+                        <input type="hidden" name="group_id">
+                    </div>
+                    <button class="btn btn-primary" type="submit">添加</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 给角色添加用户结束 -->
+
+<script>
+    // 添加菜单
+    function add(){
+        $("input[name='title']").val('');
+        $('#thinkright-add').modal('show');
+    }
+
+    // 修改菜单
+    function edit(obj){
+        var ruleId=$(obj).attr('ruleId');
+        var ruletitle=$(obj).attr('ruletitle');
+        $("input[name='id']").val(ruleId);
+        $("input[name='title']").val(ruletitle);
+        $('#thinkright-edit').modal('show');
+    }
+
+    // 向角色添加用户 Admin/Rule/check_user
+    function adduser(obj){
+        var groupId=$(obj).attr('groupId');
+        // var ruletitle=$(obj).attr('ruletitle');
+        $("input[name='group_id']").val(groupId);
+        // $("input[name='title']").val(ruletitle);
+        $('#thinkright-adduser').modal('show');
+    }
+</script>
+
+{include file="common/body_down"/}

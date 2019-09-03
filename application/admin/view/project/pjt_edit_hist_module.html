@@ -1,0 +1,95 @@
+<div class="col-sm-12">
+    <div class="panel">
+        <form method="get">
+            <!--Data Table-->
+            <!--===================================================-->
+            <div class="panel-heading">
+                <h3 class="panel-title" style="vertical-align: center">
+                    会议历史
+                    <!--利用get方法传参,通过设置参数名称为chooseTable来修改显示的table-->
+                    <div style="float: right;margin: auto;padding: auto;">
+                        <select name="request_id" lay-verify="">
+                            {volist name="request" id="vo"}
+                            <option value="{$vo.id}"> {$vo.abstract} </option>
+                            {/volist}
+                        </select>
+                        <button class = "btn-rounded btn btn-success" type="submit">切换</button>
+                    </div>
+                </h3>
+            </div>
+        </form>
+        <!--<form method="post" action="/Admin/Link/submit">-->
+        <div class="panel panel-info">
+            <div class="panel-body">
+                <div class="layui-btn-group demoTable">
+                    <button type="button" class="layui-btn" data-type="getCheckData">批量下载</button>
+                </div>
+                <table class="layui-hide" id="demo" lay-filter="demo"></table>
+            </div>
+        </div>
+        <!--===================================================-->
+        <!--End Data Table-->
+        <!--</form>-->
+    </div>
+</div>
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+        //展示已知数据
+        var cols = JSON.parse('{$cols_json}');
+        var data = JSON.parse('{$history_json}');
+        table.render({
+            elem: '#demo'
+            ,cols: cols
+            ,data: data
+            //,skin: 'line' //表格风格
+            ,even: true
+            ,id: "idTest"
+            ,page: true //是否显示分页
+            ,limits: [10,30,99999]
+            ,limit: 10 //每页默认显示的数量
+        });
+        //监听表格复选框选择
+        table.on('checkbox(demo)', function(obj){
+            console.log(obj)
+        });
+
+
+        var $ = layui.$, active = {
+            getCheckData: function(){ //获取选中数据
+                var checkStatus = table.checkStatus('idTest')
+                    ,data = checkStatus.data;
+                // layer.alert(JSON.stringify(data));
+                post("{:url('admin/Listfile/batch_file_download')}",{data:JSON.stringify(data)});
+            }
+        };
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+        /**
+         * 利用post进行参数传递,并且打开新网页
+         * @param URL       URL地址
+         * @param PARAMS    以类的结构组织的数据,类似{a:1,b:2}
+         * @returns {HTMLFormElement}
+         */
+        function post(URL, PARAMS) {
+            var temp = document.createElement("form");
+            temp.action = URL;
+            temp.method = "post";
+            temp.style.display = "none";
+            for (var x in PARAMS) {
+                var opt = document.createElement("textarea");
+                opt.name = x;
+                opt.value = PARAMS[x]; // alert(opt.name)
+                temp.appendChild(opt);
+            }
+            document.body.appendChild(temp);
+            temp.submit();
+            console.log("居然会返回?");
+            return temp;
+        }
+    });
+</script>

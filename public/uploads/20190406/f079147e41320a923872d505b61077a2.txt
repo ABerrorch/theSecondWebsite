@@ -1,0 +1,13 @@
+202.38.79.227
+
+ssh aberror@202.38.79.227 -p 2223
+password：mypasswd
+
+mysql
+root
+root
+
+
+
+网站地址（注意不是https）
+http://202.38.79.227:8230

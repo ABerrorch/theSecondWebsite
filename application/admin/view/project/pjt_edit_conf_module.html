@@ -1,0 +1,348 @@
+<!--conference-->
+<div id = "research_conference" class="col-sm-5">
+    <div class="panel">
+        <!--Data Table-->
+        <!--===================================================-->
+        <div class="panel-heading">
+            <h3 class="panel-title" style="vertical-align: center">
+                会议管理
+            </h3>
+        </div>
+        <div class="panel panel-info">
+            <!--<div class="panel-heading" style="border-radius: 5px;margin: 17px;"><h3>我的文章</h3></div>-->
+            <div class="panel-body">
+                <table  class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="70%">会议名称</th>
+                        <th width="10%">文件</th>
+                        <th width="15%">
+                            <!--注意了同志们！下面的这里不能直接使用链接！否则拥有预加载功能的浏览器会在鼠标移动上去的时候自动加载！-->
+                            <button id = "conferenceAddAdd" class="btn btn-primary btn-block" onclick="ConferenceAddAdd({$project.constant_id})">
+                                新增会议
+                            </button>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name = "conference" id = "vo" }
+                    {if !isset($vo.undisplay)}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>
+                            <a href="{:url('admin/project/project_edit',['project_id'=>$project.id,'function'=>'conf','conference_id'=>$vo.id])}"
+                               class="btn btn-success btn-rounded">
+
+                                {$vo.name|default="未知"}
+                            </a>
+                        </td>
+                        <td>{$vo.files_count|default="NULL"}</td>
+                        <td>
+                            <a type="button" class="btn btn-warning btn-block"
+                               onclick="ConferenceRename({$vo.id})"
+                            >更名</a>
+                        </td>
+                    </tr>
+                    {/if}
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--===================================================-->
+        <!--End Data Table-->
+
+    </div>
+</div>
+<!--end conference-->
+
+<!--conference_request-->
+<div id = "conference_request" class="col-sm-7">
+    <div class="panel">
+
+        <form method="get" action="/admin/project/project_edit/project_id/{$project.id}/function/conf/">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="vertical-align: center">
+                    会议:{$conference_now['name']|default='没有选中会议'}
+                    <div style="float: right;margin: auto;padding: auto;">
+                        <select name="conference_id" lay-verify="">
+                            {volist name="PushResearch" id="vo"}
+                            <option value="{$vo.conference_id}"> {$vo.research_name} </option>
+                            {/volist}
+                        </select>
+                        <button class = "btn-rounded btn btn-success" type="submit">切换</button>
+                    </div>
+                </h3>
+            </div>
+        </form>
+
+        <div class="panel panel-info">
+            <div class="panel-body">
+                {if !empty($conference_now)}
+                    <button type="button" class="pjt_conf_btn btn btn-warning" data-type="Push">
+                        推送管理
+                    </button>
+                    <a type="button" class="btn btn-danger"
+                       onclick="ConferenceDeleteConfirm({$conference_id|default=null})">
+                        删除会议
+                    </a>
+                    <!--注意了同志们！下面的这里不能直接使用链接！否则拥有预加载功能的浏览器会在鼠标移动上去的时候自动加载！-->
+                    <button id="requestAddAdd" class="btn btn-primary"
+                       onclick="RequestAddAdd({$conference_id})">
+                        新增要求
+                    </button>
+
+                {/if}
+                <hr>
+                <table  class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="25%">描述</th>
+                        <th width="10%">模板</th>
+                        <th width="30%">文件</th>
+                        <th width="10%"></th>
+                        <th width="10%"></th>
+                        <th width="10%"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name = "request" id = "vo" }
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.abstract|default="未知"}</td>
+                        <td>
+                            {if !isset($vo.template_id)}
+                            <button onclick="uploadFileModal('{:url('Admin/Project/request_add_file',['request_id'=>$vo.id,'isTemplate'=>1])}','template','request:{$vo.id}')"
+                                    class="btn btn-warning btn-block"
+                            >没有模板</button>
+                            {else}
+                            <a type="button" class="btn btn-success btn-block"
+                               href="{:url('Admin/Project/download_file',['id'=>$vo.template_id])}"
+                            >模板下载</a>
+                            {/if}
+                        </td>
+                        <td>[{$vo.file_id|default=''}]&nbsp&nbsp{$vo.filename|default="尚未上传"}</td>
+                        <td>
+                            {if $vo.upload==1}
+                            <button onclick="uploadFileModal('{:url('Admin/Project/request_add_file',['request_id'=>$vo.id])}#conference_request','','request:{$vo.id}')"
+                                    class="btn btn-mint btn-block"
+                            >上传</button>
+                            {else}
+                            <button class="btn btn-default btn-block">上传</button>
+                            {/if}
+                        </td>
+                        <td>
+                            {if isset($vo.file_id)}
+                            <a type="button" class="btn btn-success btn-block"
+                               href="{:url('Admin/Project/download_file',['id'=>$vo.file_id])}"
+                            >下载</a>
+                            {else}
+                            <a type="button" class="btn btn-default btn-block" disabled>下载</a>
+                            {/if}
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-block"
+                                    onclick="RequestDominate(
+                                        '{$vo.id}',
+                                        '{$vo.abstract}',
+                                        '{$vo.upload}',
+                                    )"
+                            >管理</button>
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--===================================================-->
+        <!--End Data Table-->
+
+    </div>
+</div>
+<!--end conference_request-->
+
+
+<!-- conference更名模态框开始 -->
+<div class="modal fade" id="conference_rename" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="rename-title">
+                    更名
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="rename-form" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="name">名称</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control"
+                                       id="name" name="name" required>
+                            </div>
+                        </div>
+                        <button class="btn btn-success" type="submit" style="float: right">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- conference更名模态框结束 -->
+
+<!-- request管理模态框开始 -->
+<div class="modal fade" id="request_dominate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">要求管理</h4>
+            </div>
+            <div class="modal-body">
+                <form id="requestDominateForm" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="name">要求描述</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control"
+                                       id="request_abstract" name="request_abstract" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="name">可以上传</label>
+                            <div class="col-sm-9">
+                                <input type="radio" id = "request_radio_true"  value = "1" name = "request_radio">True
+                                <input type="radio" id = "request_radio_false" value = "0" name = "request_radio">False
+                            </div>
+                        </div>
+                        <button class="btn btn-warning btn-rounded" type="submit" style="float: right">提交</button>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button class="btn btn-danger btn-rounded"
+                            id="request_delete_confirm"
+                            style="float: right"
+                    >删除要求</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- request管理模态框结束 -->
+
+
+<!--会议管理-->
+<script>
+    function ConferenceAddAdd($research_id) {
+       location = '/admin/project/conference_add/research_id/' + $research_id;
+    }
+    //会议删除确认
+    function ConferenceDeleteConfirm($conference_id) {
+        if(confirm('确认删除这个会议？'))
+            location="{:url('Admin/Project/conference_del','',false)}/conference_id/" + $conference_id;
+    }
+    //会议更名
+    function ConferenceRename($conference_id){
+        $('#rename-title').html('会议更名');
+        $('#rename-form').prop('action',"{:url('Admin/Project/conference_modify','',false)}/conference_id/" + $conference_id + "#research_conference");
+        $('#conference_rename').modal('show');
+    }
+    // 会议相关按钮
+    $(document).ready(function () {
+        $(".pjt_conf_btn").click(function () {
+            let submitType = $(this).data('type');
+            // 会议推送
+            if(submitType === 'Push'){
+                $('#one_push').modal('show');
+            }
+        });
+    // <button type="button" class="pjt_conf_btn btn btn-warning" data-type="Push">推送会议</button>
+    })
+</script>
+<!--会议管理-->
+
+
+<!--要求管理-->
+<script>
+    function RequestAddAdd($conference_id) {
+        location = '/admin/project/request_add/conference_id/' + $conference_id;
+    }
+    //要求删除确认
+    function RequestDeleteConfirm($request_id) {
+        if(confirm('确认删除这个要求？'))
+            location="{:url('Admin/Project/request_dominate','',false)}/request_id/" + $request_id;
+    }
+    //要求管理
+    function RequestDominate($request_id,$request_abstract,$request_upload) {
+        // prop是类似attr的方法
+        // 对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
+        // 对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。
+        $('#request_abstract').prop('value',$request_abstract);
+        if($request_upload != 0){
+            $('#request_radio_true').prop('checked',true);
+            $('#request_radio_false').prop('checked',false);
+        } else {
+            $('#request_radio_true').prop('checked',false);
+            $('#request_radio_false').prop('checked',true);
+        }
+
+        $('#requestDominateForm').attr('action',"/admin/project/request_dominate/request_id/"+$request_id);
+        $('#request_delete_confirm').attr('onclick',"RequestDeleteConfirm("+$request_id+")");
+
+        $('#request_dominate').modal('show');
+    }
+</script>
+<!--要求管理-->
+
+
+{if !empty($conference_now)}
+<!-- 单课题推送模态框开始 -->
+<div class="modal fade" id="one_push" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    推送
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="post" enctype="multipart/form-data"
+                      action="{:url('/Admin/Project/pjt_conf_push',['project_id'=>$project.id,'conference_id'=>$conference_id])}">
+
+                    <div class="panel-body">
+                        {volist name="research" id="vo"}
+
+                        <div class="form-group">
+                            <label class="col-sm-6 control-label" for="{$vo.name}">{$vo.name}</label>
+                            <div class="col-sm-6">
+                                <input type="checkbox" name="pushResearch[]" id="{$vo.name}" value="{$vo.id}">
+                            </div>
+                        </div>
+                        {/volist}
+                        <div class="col-sm-12">
+                            <div class="text-danger">
+                                推送实质上是直接对当前会议进行复制，所以先推送再修改将没有效果。<br>
+                                重新推送将会直接删除之前复制的会议
+                            </div>
+                        </div>
+                        <button class = "btn-rounded btn btn-success" type="submit" style="float: right">推送</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 单课题推送模态框结束 -->
+{/if}
+<!--end files-->
+{include file="common/uploadFileModal"/}
+<!--files-js-->

@@ -1,0 +1,277 @@
+<div id='project_message'class="col-sm-12">
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <!--下面这里强行设置颜色为fff,因为.panel-title a 和 下面btn的颜色设置相冲突了,字体是黑色很难看,迫不得已-->
+                {$project.name}
+                <!--<a class="btn btn-primary btn-rounded" href="	" style="color:#fff"></a>-->
+            </h3>
+        </div>
+        <div class="panel panel-info">
+            <!--<div class="panel-heading" style="border-radius: 5px;margin: 17px;"><h3>我的文章</h3></div>-->
+            <div class="panel-body">
+                <table  class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="30%">项目名称</th>
+                        <th width="15%">负责人</th>
+                        <th width="25%">成员</th>
+                        <th width="15%">创建时间</th>
+                        <th width="10%">
+                            <!--<button class="btn btn-block btn-primary" onclick="emailSentConfirm()">发送邮件</button>-->
+                        </th>
+                        <script>
+                            function emailSentConfirm() {
+                                if(confirm('向项目成员发送项目信息?注意!一旦生成了项目信息,项目信息将被更新!'))
+                                    location="{:url('admin/Email/research_email',['research_id'=>$project.constant_id])}"
+                            }
+                        </script>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{$project.id}</td>
+                        <td>
+                            {$project.name|default="未知"}
+                        </td>
+                        <td>
+                            <?php
+                                // 这个地方是用来处理替换中文符号，并且能够实现在人数很多的时候自动换行
+                                // 因为浏览器会把连续的英文字符和逗号视为一个单词所以必须分开
+                                if(!empty($project['principal'])){
+                                    $tmp = preg_replace("/，/",", ",$project['principal']);
+                                    $tmp = preg_replace("/,/",", ",$tmp);
+                                    echo $tmp;
+                                } else {
+                                    echo "没有项目管理员";
+                                }
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                                // 这个地方是用来处理替换中文符号，并且能够实现在人数很多的时候自动换行
+                                // 因为浏览器会把连续的英文字符和逗号视为一个单词所以必须分开
+                                if(!empty($project['teammate'])){
+                                    $tmp = preg_replace("/，/",", ",$project['teammate']);
+                                    $tmp = preg_replace("/,/",", ",$tmp);
+                                    echo $tmp;
+                                } else {
+                                    echo "没有项目成员";
+                                }
+                            ?>
+                        </td>
+                        <td>{$project.time}</td>
+                        <td>
+                            <a type="button" class="btn btn-warning btn-block"
+                               data-toggle="modal" data-target="#project_dominate"
+                            >
+                                编辑项目属性
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--===================================================-->
+        <!--End Data Table-->
+
+    </div>
+</div>
+
+
+<div id = "project_researches" class="col-sm-12">
+    <div class="panel">
+        <!-- <div class="panel-heading">
+            <h3 class="panel-title">Sample Toolbar</h3>
+        </div> -->
+
+        <!--Data Table-->
+        <!--===================================================-->
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <!--下面这里强行设置颜色为fff,因为.panel-title a 和 下面btn的颜色设置相冲突了,字体是黑色很难看,迫不得已-->
+                项目所属课题
+                <!--<a class="btn btn-primary btn-rounded" href="	" style="color:#fff"></a>-->
+            </h3>
+        </div>
+        <div class="panel panel-info">
+            <!--<div class="panel-heading" style="border-radius: 5px;margin: 17px;"><h3>我的文章</h3></div>-->
+            <div class="panel-body">
+                <table  class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="31%">课题名称</th>
+                        <th width="35%">课题负责人</th>
+                        <th width="15%">创建时间</th>
+                        <th width="7%"></th>
+                        <th width="7%">
+                            <!--注意了同志们！下面的这里不能直接使用链接！否则拥有预加载功能的浏览器会在鼠标移动上去的时候自动加载！-->
+                            <button class="btn btn-primary btn-block" onclick="researchAddAdd({$project.id})">
+                                新增课题
+                            </button>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name = "research" id = "vo" }
+                    <tr>
+                        <td>
+                            {$vo.id}
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-success  btn-rounded"
+                               href="{:url('Admin/Research/research_dominate',['research_id'=>$vo.id])}">
+                                {$vo.name|default="未知"}
+                            </a>
+                        </td>
+                        <td>
+                            <?php
+                                // 这个地方是用来处理替换中文符号，并且能够实现在人数很多的时候自动换行
+                                // 因为浏览器会把连续的英文字符和逗号视为一个单词所以必须分开
+                                if(!empty($vo['principal'])){
+                                    $tmp = preg_replace("/，/",", ",$vo['principal']);
+                                    $tmp = preg_replace("/,/",", ",$tmp);
+                                    echo $tmp;
+                                } else {
+                                    echo "没有课题管理员";
+                                }
+                            ?>
+                        </td>
+                        <td>{$vo.time}</td>
+                        <td>
+                            <a type="button" class="btn btn-warning  btn-block"
+                               onclick="modify('{$vo.id}','{$vo.name}','{$vo.principal}')">
+                                编辑
+                            </a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-danger   btn-block"
+                               onclick="fileDeleteConfirm{$vo['id']}()">删除</a>
+                            <script>
+                                function fileDeleteConfirm{$vo['id']}() {
+                                    if(confirm('确认删除这个资源？'))
+                                        location="{:url('Admin/Project/research_del',array('research_id'=>$vo['id']))}"
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+                <!--下面这个东西就是选择栏-->
+                <!--我也不知道原理,反正如果从数据库里读取数据的时候使用pageinate得到的变量,就能用这个东西-->
+                <!--查文档查不到原理,绝望-->
+                {$research->render()}
+            </div>
+        </div>
+        <!--===================================================-->
+        <!--End Data Table-->
+
+    </div>
+</div>
+<!-- 项目人员管理模态框开始 -->
+<div class="modal fade" id="project_dominate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">项目人员管理</h4>
+            </div>
+            <div class="modal-body">
+                <form id="projectDominateForm" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="project_principal">项目名称</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control"
+                                       id="project_name" name="project_name" required
+                                       value="{$project.name}"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="project_principal">管理员</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" id="project_principal" name="project_principal"
+                                >{$project.principal}</textarea>
+                                <div class="text-danger">
+                                    如果有多个管理员,使用","分割,类似"A,B,C"
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="project_teammate">组员</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" id="project_teammate" name="project_teammate"
+                                >{$project.teammate}</textarea>
+                                <div class="text-danger">
+                                    如果有多个组员,使用","分割,类似"A,B,C"
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-warning btn-rounded" type="submit" style="float: right">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 项目人员管理模态框结束 -->
+
+<!-- 修改课题模态框开始 -->
+<div class="modal fade" id="modify_research" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    修改课题
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="modify_research_form" class="form-horizontal"  method="post" enctype="multipart/form-data">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="research_name">课题名称</label>
+                            <div class="col-sm-9">
+                                <input type="text"  id="research_name" class="form-control" name="name" required="required">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label" for="principal">课题负责人</label>
+                            <div class="col-sm-9">
+                                <input type="text"  id="principal" class="form-control" name="principal" required="required" value="normal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <button class="btn btn-success" type="submit" >提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改课题模态框结束 -->
+
+<script>
+    // 添加研究
+    function researchAddAdd($project_id){
+        location='/Admin/Project/research_add/project_id/' + $project_id;
+    }
+    // <!--调动修改课题模态框-->
+    function modify(id,name,principal) {
+        console.log(id,name,principal);
+        $("#research_name").attr('value',name);
+        $("#principal").attr('value',principal);
+        $("#modify_research_form").attr('action', "{:url('Admin/Project/research_modify','',false)}/research_id/" + id);
+        $('#modify_research').modal('show');
+    }
+</script>
+<!--调用修改课题模态框结束-->

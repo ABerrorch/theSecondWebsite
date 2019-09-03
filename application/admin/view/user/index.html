@@ -1,0 +1,102 @@
+﻿{include file="common/body_up"/}
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        {include file="common/navbar"/}
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div id="page-title">
+                    <!-- <h1 class="page-header text-overflow">Collapsed Navigation</h1> -->
+
+                    <!--Searchbox-->
+                    <!-- <div class="searchbox">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search..">
+                            <span class="input-group-btn">
+                                <button class="text-muted" type="button"><i class="demo-pli-magnifi-glass"></i></button>
+                            </span>
+                        </div>
+                    </div> -->
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
+
+                <!--Breadcrumb-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <ol class="breadcrumb">
+                    <li><a href="{:url('Admin/index/index')}">首页</a></li>
+                    <li><a href="#">{$title}</a></li>
+                    <li class="active">{$subtitle}</li>
+                </ol>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End breadcrumb-->
+                <div class="panel">
+                    <!-- <div class="panel-heading">
+                        <h3 class="panel-title">Add &amp; Remove Rows</h3>
+                    </div> -->
+
+                    <!-- Foo Table - Add & Remove Rows -->
+                    <!--===================================================-->
+                    <div class="panel-body">
+                        <div class="pad-btm form-inline">
+                            <div class="row">
+                                <div class="col-sm-6 text-xs-center">
+                                    <div class="form-group">
+                                        <a href="{:url('Admin/User/add_user')}"><button id="demo-btn-addrow" class="btn btn-purple"> 添加用户</button></a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 text-xs-center text-right">
+                                    <!-- <div class="form-group">
+                                        <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <table id="demo-foo-addrow" class="table table-bordered table-hover toggle-circle" data-page-size="7">
+                            <thead>
+                            <tr>
+                                <th data-sort-initial="true" data-toggle="true">用户名</th>
+                                <th>拥有角色</th>
+                                <th data-hide="phone, tablet">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {foreach name="data" item="v"}
+                            <tr>
+                                <td>{$v['username']}</td>
+                                <td>{$v['title']}</td>
+                                <td>
+                                    <a href="{:url('Admin/User/edit_user',array('id'=>$v['id']))}">修改权限或密码</a>
+                                </td>
+                            </tr>
+                            {/foreach}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="6">
+                                    <div class="text-right">
+                                        <ul class="pagination"></ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!--===================================================-->
+                    <!-- End Foo Table - Add & Remove Rows -->
+
+                </div>
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+            {include file="common/mainnav"/}
+        </div>
+        {include file="common/footer"/}
+    </div>
+{include file="common/body_down"/}

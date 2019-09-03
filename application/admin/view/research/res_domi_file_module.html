@@ -1,0 +1,79 @@
+<!--research_files:-->
+<div id = "research_files" class="col-sm-12">
+    <div class="panel">
+        <!--Data Table-->
+        <!--===================================================-->
+        <div class="panel-heading">
+            <h3 class="panel-title" style="vertical-align: center">
+                课题相关资料
+            </h3>
+        </div>
+        <div class="panel panel-info">
+            <!--<div class="panel-heading" style="border-radius: 5px;margin: 17px;"><h3>我的文章</h3></div>-->
+            <div class="panel-body">
+                <table  class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th width="25%">文件名</th>
+                        <!--<th width="5%">类别</th>-->
+                        <th width="40%">说明</th>
+                        <th width="10%">上传时间</th>
+                        <th width="10%">上传者</th>
+                        <th width="5%"></th>
+                        <th width="5%">
+                            <button id="filesAddAdd"class="btn btn-primary btn-block"
+                                    onclick="uploadFileModal('{:url('Admin/Research/add_file')}#research_files','','research:{$research.id}')">
+                                添加
+                            </button>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {volist name = "pfile" id = "vo" }
+                    <tr bgcolor="#ffffe0">
+                        <td>{$vo.id}</td>
+                        <td>{$vo.filename|default="未知"}</td>
+                        <!--<td>{$vo.type}</td>-->
+                        <td>{$vo.abstract|default="没有简介"}</td>
+                        <td>{$vo.datetime}</td>
+                        <td>{$vo.author}</td>
+                        <td>
+                            <a type="button" class="btn btn-success btn-block" href="{:url('Admin/Research/download_file',['id'=>$vo.id])}">下载</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    {/volist}
+                    {volist name = "data" id = "vo" }
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.filename|default="未知"}</td>
+                        <!--<td>{$vo.type}</td>-->
+                        <td>{$vo.abstract|default="没有简介"}</td>
+                        <td>{$vo.datetime}</td>
+                        <td>{$vo.author}</td>
+                        <td>
+                            <a type="button" class="btn btn-success btn-block" href="{:url('Admin/Research/download_file',['id'=>$vo.id])}">下载</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-danger  btn-block"
+                               onclick="fileDeleteConfirm{$vo['id']}()">删除</a>
+                            <script>
+                                function fileDeleteConfirm{$vo['id']}() {
+                                    if(confirm('确认删除这个资源？'))
+                                        location="{:url('Admin/Research/del_file',array('id'=>$vo['id']))}"
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                    {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--===================================================-->
+        <!--End Data Table-->
+
+    </div>
+</div>
+<!--end research_files-->

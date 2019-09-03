@@ -1,0 +1,94 @@
+{include file="common/body_up"/}
+    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+        {include file="common/navbar"/}
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div id="page-title">
+
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
+
+                <!--Breadcrumb-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <ol class="breadcrumb">
+                    <li><a href="{:url('Admin/Index/index')}">首页</a></li>
+                    <li><a href="#">系统设置</a></li>
+                    <li class="active">文章管理</li>
+                </ol>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End breadcrumb-->
+                <!--<div class="alert alert-info" style="margin: 17px;">-->
+                <!--<button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>-->
+                <!--<h2><strong>注意!</strong>测试账号每个IP每分钟只能新增一篇文章，没有删除和编辑权限。</h2>-->
+                <!--</div>-->
+                <div class="panel">
+                    <!-- <div class="panel-heading">
+                        <h3 class="panel-title">Sample Toolbar</h3>
+                    </div> -->
+
+                    <!--Data Table-->
+                    <!--===================================================-->
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <!--下面这里强行设置颜色为fff,因为.panel-title a 和 下面btn的颜色设置相冲突了,字体是黑色很难看,迫不得已-->
+                            <a class="btn btn-info btn-rounded" href="{:url('Admin/Article/add_art')}" style="color:#fff">新增文章</a>
+                        </h3>
+                    </div>
+                    <div class="panel panel-info">
+                        <!--<div class="panel-heading" style="border-radius: 5px;margin: 17px;"><h3>我的文章</h3></div>-->
+                        <div class="panel-body">
+                            <table  class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th width="5%">ID</th>
+                                    <th width="15%">标题</th>
+                                    <th width="30%">摘要</th>
+                                    <th width="15%">时间</th>
+                                    <th width="10%">作者</th>
+                                    <th width="25%">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {volist name = "data" id = "vo" }
+                                <tr>
+                                    <td>{$vo.id}</td>
+                                    <td>{$vo.title}</td>
+                                    <td>{$vo.abstract}</td>
+                                    <td>{$vo.create_time}</td>
+                                    <td>{$vo.author}</td>
+                                    <td>
+                                        <a type="button" class="btn btn-warning  btn-xs btn-rounded" href="{:url('Admin/Article/edi_art',array('id'=>$vo['id']))}">  编辑  </a>
+                                        &nbsp;&nbsp;
+                                        <a  type="button" class="btn btn-danger  btn-xs btn-rounded"  href="javascript:if(confirm('确认删除这篇文章？'))location='{:url('Admin/Article/del_art',array('id'=>$vo['id']))}'">  删除  </a>
+                                    </td>
+                                </tr>
+                                {/volist}
+                                </tbody>
+                            </table>
+
+                            {$data->render()}
+                        </div>
+                    </div>
+                    <!--===================================================-->
+                    <!--End Data Table-->
+
+                </div>
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+            {include file="common/mainnav"/}
+        </div>
+        {include file="common/footer"/}
+    </div>
+{include file="common/body_down"/}
+
+

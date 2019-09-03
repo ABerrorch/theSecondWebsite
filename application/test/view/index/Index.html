@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <!--jQuery [ REQUIRED ]-->
+    <script src="{$Think.config.web_root}/js/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+
+    <form action="/test/index/test1" enctype="multipart/form-data" method="post">
+        <input type="button" id = 'test' value="点我">
+        <p id = 'display'>ORIGIN</p>
+    </form>
+    <!--通过JSON,将数据从PHP传输到JAVASCRIPT-->
+    <script>
+       var tmp = '[{"path":"20190325\\\\ef7ae451bee4ceeb7737f8617fc9ed5f.txt","id":1,"filename":"2018\u5e74\u5de5\u4f5c\u65b9\u6848","abstract":"","type":"request:22","datetime":"2019-03-25 19:11:30","author":"admin"}]';
+       console.log(tmp);
+       tmp = JSON.parse(tmp);
+       console.log(tmp);
+    </script>
+
+</body>
+</html>

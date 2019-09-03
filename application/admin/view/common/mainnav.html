@@ -1,0 +1,145 @@
+<!--MAIN NAVIGATION-->
+<!--===================================================-->
+<nav id="mainnav-container">
+    <div id="mainnav">
+
+        <!--Menu-->
+        <!--================================-->
+        <div id="mainnav-menu-wrap">
+            <div class="nano">
+                <div class="nano-content">
+
+                    <!--Profile Widget-->
+                    <!--================================-->
+                    <div id="mainnav-profile" class="mainnav-profile">
+                        <div class="profile-wrap">
+                            <!--如果后续要求添加头像，那么添加在这里-->
+                            <!--<div class="pad-btm">-->
+                                <!--&lt;!&ndash;<span class="label label-success pull-right">New</span>&ndash;&gt;-->
+                                <!--<img class="img-circle img-sm img-border" src="{$Think.config.web_root}/img/profile-photos/1.png" alt="Profile Picture">-->
+                            <!--</div>-->
+                            <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
+                                            <span class="pull-right dropdown-toggle">
+                                                <i class="dropdown-caret"></i>
+                                            </span>
+                                <p class="mnp-name">{$Think.session.user.username|default = 'NULL'}</p>
+                                <span class="mnp-desc">{$Think.session.user.email|default = 'NULL@null.com'}</span>
+                            </a>
+                        </div>
+                        <div id="profile-nav" class="collapse list-group bg-trans">
+                            <a href="{:url('Admin/User/my_center')}" class="list-group-item">
+                                <i class="demo-pli-male icon-lg icon-fw"></i> 查看个人信息
+                            </a>
+                            <!--<a href="#" class="list-group-item">-->
+                                <!--<i class="demo-pli-gear icon-lg icon-fw"></i> Settings-->
+                            <!--</a>-->
+                            <!--<a href="#" class="list-group-item">-->
+                                <!--<i class="demo-pli-information icon-lg icon-fw"></i> Help-->
+                            <!--</a>-->
+                            <a href="{:url('home/Index/logout')}" class="list-group-item">
+                                <i class="demo-pli-unlock icon-lg icon-fw"></i> 登出
+                            </a>
+
+                            {volist name="User_Authority" id="vo"}
+                                <span  class="list-group-item">
+                                    权限&nbsp:&nbsp{$vo}
+                                </span>
+                            {/volist}
+                        </div>
+                    </div>
+
+
+                    <ul id="mainnav-menu" class="list-group">
+
+                        <!--Category name-->
+                        <li class="list-header">导航栏</li>
+
+                        <!--Menu list item-->
+                        <li class="active-link">
+                            <a href="{:url('Admin/Index/index')}">
+                                <i class="demo-psi-home"></i>
+                                <span class="menu-title">
+                                                <strong>控制台</strong>
+                                            </span>
+                            </a>
+                        </li>
+
+                        <!--Main Navbar-->
+                        <!--实际的导航栏定义在Adminbase中-->
+                        {volist name="MainNav" id = "nav"}
+                        <li>
+                            <a href="#">
+                                {$nav.flag}
+                                <span class="menu-title"><strong>{$nav.header}</strong></span>
+                                <i class="arrow"></i>
+                            </a>
+
+                            <ul class="collapse">
+                                {volist name="nav.container" id = "vo"}
+                                <li><a href="{$vo.url}">{$vo.name}</a></li>
+                                {/volist}
+                            </ul>
+                        </li>
+                        {/volist}
+                    </ul>
+
+                    <!--Widget-->
+                    <!--================================-->
+                    <div class="mainnav-widget">
+
+                        <!-- Show the button on collapsed navigation -->
+                        <div class="show-small">
+                            <a href="#" data-toggle="menu-widget" data-target="#demo-wg-server">
+                                <i class="demo-pli-monitor-2"></i>
+                            </a>
+                        </div>
+
+                        <!--&lt;!&ndash; 服务器状态 &ndash;&gt;-->
+                        <!--<div id="demo-wg-server" class="hide-small mainnav-widget-content">-->
+                            <!--<ul class="list-group">-->
+                                <!--<li class="list-header pad-no pad-ver">服务器状态</li>-->
+                                <!--<li class="mar-btm">-->
+                                    <!--<span class="label label-primary pull-right">-->
+                                        <!--{$cpuRate | default = 100}%-->
+                                    <!--</span>-->
+                                    <!--<p>CPU Usage</p>-->
+                                    <!--<div class="progress progress-sm">-->
+                                        <!--<div class="progress-bar progress-bar-primary" style="width:{$cpuRate | default = 100}%;">-->
+                                            <!--<span class="sr-only">-->
+                                                <!--{$cpuRate | default = 100}%-->
+                                            <!--</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                                <!--<li class="mar-btm">-->
+                                    <!--<span class="label label-purple pull-right">-->
+                                        <!--{$memRate | default = 100}%-->
+                                    <!--</span>-->
+                                    <!--<p>RAM Usage</p>-->
+                                    <!--<div class="progress progress-sm">-->
+                                        <!--<div class="progress-bar progress-bar-purple" style="width: {$memRate | default = 100}%">-->
+                                            <!--<span class="sr-only">-->
+                                                <!--{$memRate | default = 100}%-->
+                                            <!--</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                                <!--&lt;!&ndash;<li class="pad-ver"><a href="#" class="btn btn-success btn-bock">View Details</a></li>&ndash;&gt;-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash; 服务器状态end &ndash;&gt;-->
+
+                    </div>
+                    <!--================================-->
+                    <!--End widget-->
+
+                </div>
+            </div>
+        </div>
+        <!--================================-->
+        <!--End menu-->
+
+    </div>
+</nav>
+<!--===================================================-->
+<!--END MAIN NAVIGATION-->
