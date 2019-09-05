@@ -1,0 +1,26 @@
+<!--layui-nav-->
+<div id = "layui-navbar" class="col-sm-12">
+    <ul class="layui-nav layui-bg-blue">
+        {volist name="prePath" id = "vo"}
+        <!--下面这个是设置选中-->
+        <li class="layui-nav-item">
+            <a href="{:url('admin/research/research_dominate',['research_id'=>$research.id,'catalogPath'=>$vo.catalogPath])}">
+                {$vo.name}
+            </a>
+            <!--我这里默认了在一个目录内不会同时包含一个FUN和一个DIR-->
+            {if $vo.newPath[0]['type'] == "DIR"}
+            <dl class="layui-nav-child">
+                {volist name = "$vo.newPath" id = "j" }
+                <dd>
+                    <a href="{:url('admin/research/research_dominate',['research_id'=>$research.id,'catalogPath'=>$j.catalogPath])}">
+                        {$j.name}
+                    </a>
+                </dd>
+                {/volist}
+            </dl>
+            {/if}
+        </li>
+        {/volist}
+    </ul>
+</div>
+<!--end layui-nav-->

@@ -2,16 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d711464-a2d6-4cff-a6a2-90fad9753e83" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/application/admin/creatPjtResConfig.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/admin/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/view/research/catalogPath.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/admin/view/research/manageResearch.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/catalog.json" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/catalog.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/admin/controller/Research.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Research.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/link/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/research/res_domi_conf_module.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/research/res_domi_push_conf_module.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/research/res_domi_resb_module.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/admin/view/research/research_dominate.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/research/research_dominate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/test/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/test/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/creatPjtResConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/creatPjtResConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/common/uploadFileModal.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/common/uploadFileModal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/research/manageA.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/research/manageA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/research/readOnlyA.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/research/readOnlyA.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/research/res_domi_file_module.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/research/research_dominate.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/research/dirOnly.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190325/a1fa49906929f3c1eb153e79ddfbcaae.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190325/ac6203e3fb496e20af39664eed1d09b0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190325/bfc45aab14bab2d26d5d86e06b742148.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190325/e932f3e916f3837bb0807f2136376401.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190325/ef7ae451bee4ceeb7737f8617fc9ed5f.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190325/f3a674dd6d0a81166e1a4c71891970f9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190326/2a0af939c4441865316ff73953ca6a0c.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190326/33b13b62dfd42a1786ec80da4c23f80c.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190326/8d09172ff9c8f80569ce43fa1c3316ac.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190328/5962f8cb00cbfa6047da6fa713d43cf0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190328/7a7f3130776ed7f0906bb6490963ca4c.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190328/81ea79eaa9d4a97ea1389f3a262a2f97.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190328/c8e9e8bee4088c7ea4afc68c22800a04.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190328/dcfa3ba77449b3ebe9af4db74cbd71c7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190329/07eb897706c4125d04d3b874d602bb97.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190329/1dbff3b0fc96f9c6db4c8deb1a1f4e9e.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190329/823e12ea6c0504209bf4709d16684201.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190329/dffd9c0474b8bc16540d77d23fcbdc7e.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190401/21f2df94b45457d5198a43c601dcdeae.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190401/350d861e233b2b450b01703ae76dc26e.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190401/ebc040ae03061b282056d038d4572d7c.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190403/db7419bb4a6d380f42db326bbe780368.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190404/2e6c4c759339f3b48db37e36980d8a1a.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190404/e07b120cf2c1af1270468b7982a6b5a8.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190404/fe02231e425fea9d2fd066029faa5079.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190405/4e7b68cdfe1f66751e437baca8e785fb.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190405/653b3563826af3cecfa1685fb33af530.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190405/8cde2d175693a0ba7ebc5cda666195b0.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190406/12eee0c963df351142717f59155b4a1a.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190406/7e929658cf3a930b3c92473bf465483d.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190406/83139afa6963b998191f44781b21bb69.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190406/8b162a60aae4db24489f965b50f7c89d.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190406/8d8f96cdb985bb3f881c9f2657d7da1e.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190406/927df33e3b9f9fe79b8411b7ec088f3c.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190406/f079147e41320a923872d505b61077a2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190406/f26dd7edadd05bb2da19d03b1031dcc0.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/06c1c703062b8ad2ca947e0353ea870f.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/3c9140a88bcbe8b6c4773b6a45bf419d.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/5bd46dbc80f2743b391a4e760b06c4df.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/61d977c3d657b7fd676964ccca8935e5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/9661cbce5fac1ef4daa3377706f40fb4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/a61c5288629ba20a946478d6cdefbcbb.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/da19ae22cf83a6812143c17c35bd644c.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/ea2774c98c71ecfc58adf42f08561c4b.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190414/fc92b225d62183f9e0a513a67ee7d175.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190419/57c389e8baf4213ed1b056b05d1bc3cf.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190420/3b8345f24053c4b6ccb0c8c757cfa348.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190420/4c3bed2754ab041a4ab19f1404afa001.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190420/70eeccc998116c58cd5492ba2e601356.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190420/9e664f80bcf510c5ce8bdab87820920b.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190421/7135828c469fc5e6f3d9c8f1cd17bf27.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190426/0380abb10bbfffb182de740e307cae2f.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190426/10ff85cdce5fd356b30d6feffb0f26b8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190426/1db0208bd2ed4fa6c77c7f1317875357.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190426/383c2218c910cbb019f3d65ddfbb82f1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190426/6aee7bf794281e017cdb7a2520912aa0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190426/a176f7eb932f3886877ef51c0874b665.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190426/e5c95d87d80bd0c4bf2f212b69d9c1a8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/128b0c5abe137d48a4395012e7bd955a.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/177b97688a3622f24a7098d5ef97cd9d.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/1b7a6a1b58291ef4aebee7cc98643f0d.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/1c6f075abae9ea55bebbd5c3eea6588e.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/3c42dfd58865079134b1dda31c61dbba.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/50ea7d13f123ca26aa112cd78048b992.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/68f3aab1194b70249fdd1d4583b04c8c.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/838c30a5f442f3444ba057ff6388c5a4.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/b427b204e268f3ed72909beaf48d247e.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/b9a042d838ac8785f927a0fb004967c5.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190428/d10d8d933f122fe4203806cf46c8a304.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190429/29f34e53666096e4bada8748c46fca77.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190429/854e6d4843fff89f76013f1534fd01b8.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190429/87e34eeb41f12b8311e61ea6c69cca95.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190429/dd00c4dc7585f17949800307fa8c0b1f.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190510/0bf4d1be24d509cff83f3f60ed0e3fa4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190510/97d224cf6b3e365288a315db415d2430.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190510/e0becf27e513a135eff1c8dfa99c3a91.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190510/eb4143b5aa6f5129966c06879800add8.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,52 +98,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/thinkphp/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Research.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/admin/controller/Research.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="156" column="28" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="research_dominate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/research/research_dominate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/test.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="catalogPath.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/research/catalogPath.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="31" />
+              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/test/controller/Index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="creatPjtResConfig.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="creatPjtResConfig.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+            <state relative-caret-position="336">
+              <caret line="184" column="44" lean-forward="true" selection-start-line="184" selection-start-column="44" selection-end-line="184" selection-end-column="44" />
               <folding>
                 <element signature="e#86#182#0#PHP" />
               </folding>
@@ -73,31 +124,211 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalog.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/catalog.json">
+      <file leaf-file-name="Research.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/controller/Research.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="65" selection-start-column="65" selection-end-column="65" />
+            <state relative-caret-position="431">
+              <caret line="350" column="1" lean-forward="true" selection-start-line="350" selection-start-column="1" selection-end-line="350" selection-end-column="1" />
+              <folding>
+                <element signature="e#340#729#0#PHP" />
+                <element signature="e#957#1515#0#PHP" />
+                <element signature="e#1083#1290#0#PHP" />
+                <element signature="e#1083#1323#0#PHP" />
+                <element signature="e#1083#1350#0#PHP" />
+                <element signature="e#1393#1508#0#PHP" />
+                <element signature="e#1406#1507#0#PHP" />
+                <element signature="e#1520#2327#0#PHP" />
+                <element signature="e#2040#2227#0#PHP" />
+                <element signature="e#2076#2217#0#PHP" />
+                <element signature="e#2450#3731#0#PHP" />
+                <element signature="e#2750#2997#0#PHP" />
+                <element signature="e#2889#2997#0#PHP" />
+                <element signature="e#3092#3725#0#PHP" />
+                <element signature="e#3540#3715#0#PHP" />
+                <element signature="e#3833#5699#0#PHP" />
+                <element signature="e#4247#5164#0#PHP" />
+                <element signature="e#4255#4593#0#PHP" />
+                <element signature="e#4694#4918#0#PHP" />
+                <element signature="e#4294#4452#0#PHP" />
+                <element signature="e#5298#5503#0#PHP" />
+                <element signature="e#5312#5502#1#PHP" />
+                <element signature="e#5403#5466#0#PHP" />
+                <element signature="e#5505#5555#0#PHP" />
+                <element signature="e#5800#6031#0#PHP" />
+                <element signature="e#6325#7666#0#PHP" />
+                <element signature="e#7015#7365#0#PHP" />
+                <element signature="e#7049#7132#0#PHP" />
+                <element signature="e#7145#7226#0#PHP" />
+                <element signature="e#7239#7353#0#PHP" />
+                <element signature="e#7469#7532#0#PHP" />
+                <element signature="e#7469#7576#0#PHP" />
+                <element signature="e#7469#7641#0#PHP" />
+                <element signature="e#7469#7674#0#PHP" />
+                <element signature="e#7749#7839#0#PHP" />
+                <element signature="e#7763#7838#1#PHP" />
+                <element signature="e#7766#8461#0#PHP" />
+                <element signature="e#8232#8312#0#PHP" />
+                <element signature="e#8232#8373#0#PHP" />
+                <element signature="e#8232#8438#0#PHP" />
+                <element signature="e#8232#8471#0#PHP" />
+                <element signature="e#8546#8636#0#PHP" />
+                <element signature="e#8560#8635#1#PHP" />
+                <element signature="e#8561#8702#0#PHP" />
+                <element signature="e#8802#9233#0#PHP" />
+                <element signature="e#9238#9305#0#PHP" />
+                <element signature="e#9238#9332#0#PHP" />
+                <element signature="e#9342#9401#0#PHP" />
+                <element signature="e#9356#9400#1#PHP" />
+                <element signature="e#9449#9559#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manageA.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageA.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="19" selection-start-line="19" selection-end-line="20" />
+              <folding>
+                <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#script#0;n#!!top" />
+                <element signature="e#3065#3290#0" />
+                <element signature="e#3203#3282#0" />
+                <element signature="n#script#1;n#!!top" />
+                <element signature="e#3375#6028#0" />
+                <element signature="e#3537#3810#0" />
+                <element signature="e#3881#3921#0" />
+                <element signature="e#3960#5088#0" />
+                <element signature="e#3998#4282#0" />
+                <element signature="e#4319#4547#0" />
+                <element signature="e#4560#4587#0" />
+                <element signature="e#4771#5077#0" />
+                <element signature="e#5148#5261#0" />
+                <element signature="e#5273#5443#0" />
+                <element signature="e#5479#6022#0" />
+                <element signature="e#5676#5880#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manageB.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageB.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#dl#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#dd#0;n#dl#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#0;n#dd#0;n#dl#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#script#0;n#!!top" />
+                <element signature="e#2578#2803#0" />
+                <element signature="e#2716#2795#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readOnlyA.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/research/readOnlyA.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="19" selection-start-line="19" selection-end-line="20" />
+              <folding>
+                <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#script#0;n#!!top" />
+                <element signature="e#3079#3304#0" />
+                <element signature="e#3217#3296#0" />
+                <element signature="n#script#1;n#!!top" />
+                <element signature="e#3389#6042#0" />
+                <element signature="e#3551#3824#0" />
+                <element signature="e#3895#3935#0" />
+                <element signature="e#3974#5102#0" />
+                <element signature="e#4012#4296#0" />
+                <element signature="e#4333#4561#0" />
+                <element signature="e#4574#4601#0" />
+                <element signature="e#4785#5091#0" />
+                <element signature="e#5162#5275#0" />
+                <element signature="e#5287#5457#0" />
+                <element signature="e#5493#6036#0" />
+                <element signature="e#5690#5894#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manageResearch.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageResearch.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#script#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>time</find>
-      <find>项目课题管理</find>
-      <find>{if</find>
-      <find>用户管理的课题列表</find>
-      <find>{</find>
-      <find>label</find>
-      <find>public $</find>
+      <find />
       <find>auth_group</find>
       <find>defCatalog([</find>
       <find>$assoc</find>
       <find>volist</find>
       <find>&quot;,&quot;</find>
+      <find>getCheckData</find>
+      <find>like</find>
+      <find>log</find>
+      <find>form-control</find>
+      <find>id</find>
+      <find>whereOr</find>
+      <find>label</find>
+      <find>uploadFileModal</find>
+      <find>file_abstract</find>
+      <find>directory</find>
+      <find>type</find>
+      <find>DIR</find>
+      <find>$research_id</find>
+      <find>find</find>
+      <find>ERROR</find>
+      <find>default</find>
+      <find>print_r</find>
+      <find>echo</find>
+      <find>research_list</find>
+      <find>ERROR00001</find>
+      <find>readOnly</find>
+      <find>manageResearch</find>
+      <find>vo</find>
+      <find>$i</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -105,8 +336,8 @@
     </replaceStrings>
     <dirStrings>
       <dir>D:\phpStudy\PHPTutorial\WWW\website2\application\admin\view</dir>
-      <dir>D:\phpStudy\PHPTutorial\WWW\website2\application</dir>
       <dir>D:\phpStudy\PHPTutorial\WWW\website2\application\admin</dir>
+      <dir>D:\phpStudy\PHPTutorial\WWW\website2\application</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -124,8 +355,14 @@
         <option value="$PROJECT_DIR$/application/admin/view/research/res_domi_file_module.html" />
         <option value="$PROJECT_DIR$/application/admin/view/research/research_dominate.html" />
         <option value="$PROJECT_DIR$/application/admin/test.php" />
-        <option value="$PROJECT_DIR$/application/admin/creatPjtResConfig.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/common/uploadFileModal.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/research/dirOnly.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/research/manageA.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/research/readOnlyA.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/research/manageResearch.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/research/catalogPath.html" />
         <option value="$PROJECT_DIR$/application/admin/controller/Research.php" />
+        <option value="$PROJECT_DIR$/application/admin/creatPjtResConfig.php" />
       </list>
     </option>
   </component>
@@ -137,8 +374,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="776" />
-    <option name="y" value="-18" />
+    <option name="x" value="786" />
+    <option name="y" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1030" />
   </component>
@@ -168,6 +405,13 @@
               <item name="website2" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="website2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website2" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controller" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="website2" type="b2602c69:ProjectViewProjectNode" />
@@ -277,10 +521,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\phpStudy\PHPTutorial\WWW\website2\application\admin\view\research" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -321,12 +571,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567509385725</updated>
-      <workItem from="1567509387087" duration="26038000" />
+      <workItem from="1567509387087" duration="29256000" />
+      <workItem from="1567648580650" duration="21920000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26038000" />
+    <option name="totallyTimeSpent" value="51176000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -338,50 +589,51 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="762" y="0" width="781" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.19686162" />
-      <window_info anchor="bottom" id="PHP-CGI Server" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1911555" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32952926" />
-      <window_info anchor="bottom" id="Terminal" weight="0.3837375" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28284183" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952926" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0115440115" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.15406562" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.5919779" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.79885876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39942938" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" weight="0.19686162" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.79885876" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32952926" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32952926" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.0114122685" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28686327" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.19686162" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="9" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.79885876" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3837375" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39942938" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32952926" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,20 +673,107 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/application/admin/controller/Research.php</url>
-          <line>162</line>
+          <line>254</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php</url>
           <line>17</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php</url>
+          <line>73</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php</url>
+          <line>94</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/admin/view/link/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/application/admin/view/listfile/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2415">
+          <caret line="105" selection-start-line="105" selection-end-line="105" selection-end-column="14" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#div#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#button#0;n#div#0;n#h3#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#1;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#script#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="e#2730#2982#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/uploadFileModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="86" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageA.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#script#0;n#!!top" />
+            <element signature="e#3065#3290#0" />
+            <element signature="e#3203#3282#0" />
+            <element signature="n#script#1;n#!!top" />
+            <element signature="e#3375#6028#0" />
+            <element signature="e#3537#3810#0" />
+            <element signature="e#3881#3921#0" />
+            <element signature="e#3960#5088#0" />
+            <element signature="e#3998#4282#0" />
+            <element signature="e#4319#4547#0" />
+            <element signature="e#4560#4587#0" />
+            <element signature="e#4771#5077#0" />
+            <element signature="e#5148#5261#0" />
+            <element signature="e#5273#5443#0" />
+            <element signature="e#5479#6022#0" />
+            <element signature="e#5676#5880#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/listfile/batch_file.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2967">
+          <caret line="129" column="53" lean-forward="true" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/controller/User.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -443,39 +782,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/Rule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2553" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-207" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/Link.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-621">
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/Project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/command.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/listfile/batch_file.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Link.php" />
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Project.php" />
     <entry file="file://$PROJECT_DIR$/application/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -483,114 +796,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/Listfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="32" />
-          <folding>
-            <element signature="e#299#372#0#PHP" />
-            <element signature="e#430#1697#0#PHP" />
-            <element signature="e#554#1690#0#PHP" />
-            <element signature="e#555#1689#1#PHP" />
-            <element signature="e#603#777#1#PHP" />
-            <element signature="e#778#959#1#PHP" />
-            <element signature="e#960#1136#1#PHP" />
-            <element signature="e#1137#1317#1#PHP" />
-            <element signature="e#1318#1498#1#PHP" />
-            <element signature="e#1499#1678#1#PHP" />
-            <element signature="e#1702#2017#0#PHP" />
-            <element signature="e#1897#2010#0#PHP" />
-            <element signature="e#1910#2009#0#PHP" />
-            <element signature="e#2022#2446#0#PHP" />
-            <element signature="e#2157#2211#0#PHP" />
-            <element signature="e#2157#2248#0#PHP" />
-            <element signature="e#2157#2275#0#PHP" />
-            <element signature="e#2292#2439#0#PHP" />
-            <element signature="e#2305#2438#0#PHP" />
-            <element signature="e#2843#3051#0#PHP" />
-            <element signature="e#3056#3132#0#PHP" />
-            <element signature="e#3226#3251#0#PHP" />
-            <element signature="e#3256#5860#0#PHP" />
-            <element signature="e#3615#5854#0#PHP" />
-            <element signature="e#3805#5298#0#PHP" />
-            <element signature="e#4484#4499#0#PHP" />
-            <element signature="e#4851#5284#0#PHP" />
-            <element signature="e#4958#5284#0#PHP" />
-            <element signature="e#4985#5102#0#PHP" />
-            <element signature="e#5799#5854#0#PHP" />
-            <element signature="e#5866#5891#0#PHP" />
-            <element signature="e#5896#6351#0#PHP" />
-            <element signature="e#6131#6321#0#PHP" />
-            <element signature="e#6221#6311#0#PHP" />
-            <element signature="e#6356#6399#0#PHP" />
-            <element signature="e#6404#7718#0#PHP" />
-            <element signature="e#6556#6606#0#PHP" />
-            <element signature="e#6556#6782#0#PHP" />
-            <element signature="e#6857#6950#0#PHP" />
-            <element signature="e#6999#7050#0#PHP" />
-            <element signature="e#6999#7226#0#PHP" />
-            <element signature="e#6999#7275#0#PHP" />
-            <element signature="e#7382#7540#0#PHP" />
-            <element signature="e#7494#7540#0#PHP" />
-            <element signature="e#7549#7642#0#PHP" />
-            <element signature="e#7563#7641#1#PHP" />
-            <element signature="e#7723#7767#0#PHP" />
-            <element signature="e#7772#8467#0#PHP" />
-            <element signature="e#7857#7908#0#PHP" />
-            <element signature="e#7941#8291#0#PHP" />
-            <element signature="e#8053#8291#0#PHP" />
-            <element signature="e#8167#8253#0#PHP" />
-            <element signature="e#8300#8391#0#PHP" />
-            <element signature="e#8314#8390#1#PHP" />
-            <element signature="e#8473#8507#0#PHP" />
-            <element signature="e#8512#8856#0#PHP" />
-            <element signature="e#8708#8849#0#PHP" />
-            <element signature="e#8726#8848#0#PHP" />
-            <element signature="e#8862#8931#0#PHP" />
-            <element signature="e#8936#10054#0#PHP" />
-            <element signature="e#9018#9077#0#PHP" />
-            <element signature="e#9108#9193#0#PHP" />
-            <element signature="e#9235#9281#0#PHP" />
-            <element signature="e#9235#9351#0#PHP" />
-            <element signature="e#9235#9403#0#PHP" />
-            <element signature="e#9235#9441#0#PHP" />
-            <element signature="e#9543#9692#0#PHP" />
-            <element signature="e#9591#9682#0#PHP" />
-            <element signature="e#9765#9813#0#PHP" />
-            <element signature="e#9765#9878#0#PHP" />
-            <element signature="e#9765#9930#0#PHP" />
-            <element signature="e#9765#9980#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/controller/Base.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/listfile/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/home/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="21" column="69" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/common/mainnav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -600,9 +809,6 @@
           <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/test/view/index/Index.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -625,13 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/controller/Filesbase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="28" column="79" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/test/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-120">
@@ -646,26 +845,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/res_domi_conf_module.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="100" column="31" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/res_domi_resb_module.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/res_domi_push_conf_module.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/res_domi_file_module.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/res_domi_conf_module.html" />
     <entry file="file://$PROJECT_DIR$/application/admin/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -673,27 +853,267 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php">
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/res_domi_file_module.html" />
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/body_down.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/body_up.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/mainnav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        <state relative-caret-position="253">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/navbar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/common/uploadFileModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
           <folding>
-            <element signature="e#86#182#0#PHP" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/research_dominate.html">
+    <entry file="file://$PROJECT_DIR$/application/common/controller/Filesbase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding>
+            <element signature="e#284#390#0#PHP" />
+            <element signature="e#430#619#0#PHP" />
+            <element signature="e#624#1901#0#PHP" />
+            <element signature="e#864#1895#0#PHP" />
+            <element signature="e#926#1202#0#PHP" />
+            <element signature="e#1290#1758#0#PHP" />
+            <element signature="e#1847#1895#0#PHP" />
+            <element signature="e#1906#2957#0#PHP" />
+            <element signature="e#2292#2543#0#PHP" />
+            <element signature="e#2423#2543#0#PHP" />
+            <element signature="e#2577#2640#0#PHP" />
+            <element signature="e#2962#4199#0#PHP" />
+            <element signature="e#3631#4193#0#PHP" />
+            <element signature="e#3704#4193#0#PHP" />
+            <element signature="e#4205#4291#0#PHP" />
+            <element signature="e#4296#4919#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/listfile/batch_file.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="22" lean-forward="true" selection-end-line="142" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Listfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/listfile/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-277">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Rule.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageA.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="19" selection-start-line="19" selection-end-line="20" />
+          <folding>
+            <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#script#0;n#!!top" />
+            <element signature="e#3065#3290#0" />
+            <element signature="e#3203#3282#0" />
+            <element signature="n#script#1;n#!!top" />
+            <element signature="e#3375#6028#0" />
+            <element signature="e#3537#3810#0" />
+            <element signature="e#3881#3921#0" />
+            <element signature="e#3960#5088#0" />
+            <element signature="e#3998#4282#0" />
+            <element signature="e#4319#4547#0" />
+            <element signature="e#4560#4587#0" />
+            <element signature="e#4771#5077#0" />
+            <element signature="e#5148#5261#0" />
+            <element signature="e#5273#5443#0" />
+            <element signature="e#5479#6022#0" />
+            <element signature="e#5676#5880#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageB.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#dl#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#dd#0;n#dl#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#dd#0;n#dl#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#script#0;n#!!top" />
+            <element signature="e#2578#2803#0" />
+            <element signature="e#2716#2795#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/readOnlyA.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="19" selection-start-line="19" selection-end-line="20" />
+          <folding>
+            <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#script#0;n#!!top" />
+            <element signature="e#3079#3304#0" />
+            <element signature="e#3217#3296#0" />
+            <element signature="n#script#1;n#!!top" />
+            <element signature="e#3389#6042#0" />
+            <element signature="e#3551#3824#0" />
+            <element signature="e#3895#3935#0" />
+            <element signature="e#3974#5102#0" />
+            <element signature="e#4012#4296#0" />
+            <element signature="e#4333#4561#0" />
+            <element signature="e#4574#4601#0" />
+            <element signature="e#4785#5091#0" />
+            <element signature="e#5162#5275#0" />
+            <element signature="e#5287#5457#0" />
+            <element signature="e#5493#6036#0" />
+            <element signature="e#5690#5894#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageResearch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#script#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/catalogPath.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/dirOnly.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <caret line="9" selection-start-line="9" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/controller/Research.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="156" column="28" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="28" />
+        <state relative-caret-position="431">
+          <caret line="350" column="1" lean-forward="true" selection-start-line="350" selection-start-column="1" selection-end-line="350" selection-end-column="1" />
+          <folding>
+            <element signature="e#340#729#0#PHP" />
+            <element signature="e#957#1515#0#PHP" />
+            <element signature="e#1083#1290#0#PHP" />
+            <element signature="e#1083#1323#0#PHP" />
+            <element signature="e#1083#1350#0#PHP" />
+            <element signature="e#1393#1508#0#PHP" />
+            <element signature="e#1406#1507#0#PHP" />
+            <element signature="e#1520#2327#0#PHP" />
+            <element signature="e#2040#2227#0#PHP" />
+            <element signature="e#2076#2217#0#PHP" />
+            <element signature="e#2450#3731#0#PHP" />
+            <element signature="e#2750#2997#0#PHP" />
+            <element signature="e#2889#2997#0#PHP" />
+            <element signature="e#3092#3725#0#PHP" />
+            <element signature="e#3540#3715#0#PHP" />
+            <element signature="e#3833#5699#0#PHP" />
+            <element signature="e#4247#5164#0#PHP" />
+            <element signature="e#4255#4593#0#PHP" />
+            <element signature="e#4694#4918#0#PHP" />
+            <element signature="e#4294#4452#0#PHP" />
+            <element signature="e#5298#5503#0#PHP" />
+            <element signature="e#5312#5502#1#PHP" />
+            <element signature="e#5403#5466#0#PHP" />
+            <element signature="e#5505#5555#0#PHP" />
+            <element signature="e#5800#6031#0#PHP" />
+            <element signature="e#6325#7666#0#PHP" />
+            <element signature="e#7015#7365#0#PHP" />
+            <element signature="e#7049#7132#0#PHP" />
+            <element signature="e#7145#7226#0#PHP" />
+            <element signature="e#7239#7353#0#PHP" />
+            <element signature="e#7469#7532#0#PHP" />
+            <element signature="e#7469#7576#0#PHP" />
+            <element signature="e#7469#7641#0#PHP" />
+            <element signature="e#7469#7674#0#PHP" />
+            <element signature="e#7749#7839#0#PHP" />
+            <element signature="e#7763#7838#1#PHP" />
+            <element signature="e#7766#8461#0#PHP" />
+            <element signature="e#8232#8312#0#PHP" />
+            <element signature="e#8232#8373#0#PHP" />
+            <element signature="e#8232#8438#0#PHP" />
+            <element signature="e#8232#8471#0#PHP" />
+            <element signature="e#8546#8636#0#PHP" />
+            <element signature="e#8560#8635#1#PHP" />
+            <element signature="e#8561#8702#0#PHP" />
+            <element signature="e#8802#9233#0#PHP" />
+            <element signature="e#9238#9305#0#PHP" />
+            <element signature="e#9238#9332#0#PHP" />
+            <element signature="e#9342#9401#0#PHP" />
+            <element signature="e#9356#9400#1#PHP" />
+            <element signature="e#9449#9559#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="184" column="44" lean-forward="true" selection-start-line="184" selection-start-column="44" selection-end-line="184" selection-end-column="44" />
+          <folding>
+            <element signature="e#86#182#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>

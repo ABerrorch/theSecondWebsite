@@ -1,0 +1,143 @@
+{include file="common/body_up"/}
+<div id="container" class="effect aside-float aside-bright mainnav-lg">
+    {include file="common/navbar"/}
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+
+            <!--Breadcrumb-->
+            <ol class="breadcrumb">
+                <li><a href="{:url('Admin/Index/index')}">首页</a></li>
+                <li><a href="#">{$title|default="设置模板默认值"}</a></li>
+                <li class="active">{$subtitle}</li>
+            </ol>
+            <!--End breadcrumb-->
+
+            {include file="research/catalogPath"/}
+
+            <div class="col-sm-12">
+                <div class="panel">
+                    <!-- <div class="panel-heading">
+                        <h3 class="panel-title">Sample Toolbar</h3>
+                    </div> -->
+
+                    <!--Data Table-->
+                    <!--===================================================-->
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            项目/课题列表
+                        </h3>
+                    </div>
+                    <div class="panel panel-info">
+                        <!--<div class="panel-heading" style="border-radius: 5px;margin: 17px;"><h3>我的文章</h3></div>-->
+                        <div class="panel-body">
+                            <table  class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th width="5%">ID</th>
+                                    <th width="30%">项目/课题名称</th>
+                                    <th width="30%">类别</th>
+                                    <th width="25%">负责人</th>
+                                    <th width="10%"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {volist name = "data" id = "vo" }
+                                <tr>
+                                    <td>{$vo.id}</td>
+                                    <td>
+                                        <a type="button" class="btn btn-info btn-rounded"
+                                           href="{:url('Admin/Research/research_dominate',['research_id'=>$vo.id])}">
+                                            {$vo.name|default="未知"}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <?php
+											if(empty($vo['isPjt']))
+												echo "课题";
+											else
+												echo "项目";
+										?>
+                                    </td>
+                                    <td>
+                                        <?php
+											// 这个地方是用来处理替换中文符号，并且能够实现在人数很多的时候自动换行
+											// 因为浏览器会把连续的英文字符和逗号视为一个单词所以必须分开
+											if(!empty($vo['principal'])){
+												$tmp = preg_replace("/，/",", ",$vo['principal']);
+												$tmp = preg_replace("/,/",", ",$tmp);
+												echo $tmp;
+											} else {
+												echo "没有负责人";
+											}
+										?>
+                                    </td>
+                                    <td>
+                                        <?php
+											// 这个地方是用来处理替换中文符号，并且能够实现在人数很多的时候自动换行
+											// 因为浏览器会把连续的英文字符和逗号视为一个单词所以必须分开
+											if(!empty($vo['teammate'])){
+												$tmp = preg_replace("/，/",", ",$vo['teammate']);
+												$tmp = preg_replace("/,/",", ",$tmp);
+												echo $tmp;
+											} else {
+												echo "没有成员";
+											}
+										?>
+                                    </td>
+                                    <!--<td>-->
+                                    <!--<a type="button" class="btn btn-info btn-block"-->
+                                    <!--href="{:url('Admin/Research/research_dominate',['research_id'=>$vo.id])}">-->
+                                    <!--管理课题-->
+                                    <!--</a>-->
+                                    <!--</td>-->
+                                </tr>
+                                {/volist}
+                                </tbody>
+                            </table>
+                            <!--下面这个东西就是选择栏-->
+                            <!--我也不知道原理,反正如果从数据库里读取数据的时候使用pageinate得到的变量,就能用这个东西-->
+                            <!--查文档查不到原理,绝望-->
+                            {$data->render()}
+                        </div>
+                    </div>
+                    <!--===================================================-->
+                    <!--End Data Table-->
+
+                </div>
+            </div>
+
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+
+
+        {include file="common/mainnav"/}
+    </div>
+    {include file="common/footer"/}
+</div>
+
+<!--监听导航-->
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+<!--监听导航-->
+
+<!--上传文件模态框-->
+{include file="common/uploadFileModal"/}
+<!--上传文件模态框-->
+
+{include file="common/body_down"/}
+

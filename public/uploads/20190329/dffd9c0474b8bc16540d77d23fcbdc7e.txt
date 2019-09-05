@@ -1,8 +1,0 @@
-ssh iotsec@202.38.79.227 -p 2222
-password£º217
-
-mysql
-root
-root
-
-

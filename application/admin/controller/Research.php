@@ -47,7 +47,7 @@ class Research extends Listfile {
             'data'=>$data,
         ]);
     }
-    public function research_dominate($research_id = 0,$catalogPath = ""){
+    public function research_dominate($research_id,$catalogPath = ""){
         # 这里根据catalog分析一堆路径
 //        print_r($catalogPath);
         str_replace("%2C",",",$catalogPath);
@@ -69,6 +69,8 @@ class Research extends Listfile {
         # 执行
         return $this->execute($catalog,$research_id,$ret['isPjt'],$catalogPath);
     }
+
+    ##############################################################################
     # 执行函数，根据得到的catalog跳转到相应的功能函数
     protected function execute($catalog,$research_id,$isPjt,$catalogPath){
 //        print_r("------------------------------<br>");
@@ -77,88 +79,178 @@ class Research extends Listfile {
         assert( $catalog["type"] == "DIR");
         assert(count($catalog['container']) > 0);
         if($catalog['container']['0']['type'] == "DIR"){
-            return $this->directory($research_id,$isPjt,$catalogPath);
+            return $this->directory($catalog,$research_id,$isPjt,$catalogPath);
         } else {
-            // 通过执行这个函数以显示catalogPath，但是不返回，因为要使用其他模版
-            $this->directory($research_id,$isPjt,$catalogPath);
+            // 通过执行这个函数以计算路径相关的信息
+            $this->DIR($research_id,$isPjt,$catalogPath);
         }
         assert(count($catalog['container']) == 1); # 假设如果container中元素为FUN元素，那么数量只能有一个
         switch ($catalog['container']['0']['name']){
-            case "readOnlyA":return $this->readOnly();
-            case "manageA":return $this->manageA();
-            case "manageB":return $this->manageB();
-            default:return "ERROR 0000001";
+            case "readOnlyA":return $this->readOnlyA($catalog,$research_id,$isPjt,$catalogPath);
+            case "manageA":return $this->manageA($catalog,$research_id,$isPjt,$catalogPath);
+            case "manageB":return $this->manageB($catalog,$research_id,$isPjt,$catalogPath);
+            case "manageResearch": return $this->manageResearch($catalog,$research_id,$isPjt,$catalogPath);
+            default:
+                echo "<pre>";
+                print_r($catalog);
+                echo "\n<br>";
+                echo "</pre>";
+                return "ERROR 0000001";
         }
     }
-    # 这个界面，不显示文件，但是会弹出让你选择下级页面的条
-    protected function directory($research_id,$isPjt,$catalogPath){
-        $path = explode(",",$catalogPath);
-        print_r($path);
+
+    ##############################################################################
+    # 路径显示部分
+    protected function DIR($research_id,$isPjt,$catalogPath){
+        if($catalogPath == "")$path = [];
+        else $path = explode(",",$catalogPath);
+//        print_r($path);
         $prePath = [];
-        $nowPath = [];
-        $newPath = [];
         $catalog = $this->catalog;
-        if($isPjt)$catalog = $catalog['project'];
-        else $catalog = $catalog['research'];
+        $catalog = $isPjt?$catalog['project']:$catalog['research'];
 
         $tmpStr = "";
-        if($catalogPath != ""){
-            foreach ($path as $i){
-                print($tmpStr);
-                $prePath[count($prePath)] = [
-                    "catalogPath" =>$tmpStr,
-                    "name"=> $catalog['name'],
-                    "type"=> $catalog['type'],
+        $q = 0;
+        while(true){
+            $newPath = [];
+            for($j = 0;$j < count($catalog['container']);$j++){
+                $newPath[$j] = [
+                    "catalogPath" =>empty($tmpStr)? strval($j) : $tmpStr . "," . strval($j),
+                    "name"=> $catalog['container'][$j]['name'],
+                    "type"=> $catalog['container'][$j]['type'],
                 ];
-                $tmpStr = empty($tmpStr)? strval($i) : $tmpStr . "," . strval($i);
-                $catalog = $catalog['container'][$i];
             }
-        }
-        $nowPath = [
-            "catalogPath" =>$tmpStr,
-            "name"=> $catalog['name'],
-            "type"=> $catalog['type'],
-        ];
-//        if($catalog['container'][0]['type'] != "FUN"){
-        for($i = 0;$i < count($catalog['container']);$i++){
-            $newPath[$i] = [
-                "catalogPath" =>empty($tmpStr)? strval($i) : $tmpStr . "," . strval($i),
-                "name"=> $catalog['container'][$i]['name'],
-                "type"=> $catalog['container'][$i]['type'],
+            $prePath[count($prePath)] = [
+                "catalogPath" =>$tmpStr,
+                "name"=> $catalog['name'],
+                "type"=> $catalog['type'],
+                "newPath"=>$newPath,
             ];
+            if($q == count($path))break;
+            $tmp = $path[$q];
+            $tmpStr = empty($tmpStr)? strval($tmp) : $tmpStr . "," . strval($tmp);
+            $catalog = $catalog['container'][$tmp];
+            $q++;
         }
-//        }
-        echo "<pre>";
-        print_r($prePath);
-        print_r($nowPath);
-        print_r($newPath);
-        echo "</pre>";
+
+//        echo "<pre>";
+//        print_r($prePath);
+//        echo "</pre>";
+
+
         $this->assign([
             'title'=>'项目课题管理',
             'subtitle'=>'项目课题管理',
-            'research'=>Db::name("research")->find("id",$research_id),
+            'research'=>Db::name("research")
+                ->where("id",$research_id)
+                ->find(),
         ]);
+//        print("research_id = $research_id<br>");
+//        print_r([
+//            'title'=>'项目课题管理',
+//            'subtitle'=>'项目课题管理',
+//            'research'=>Db::name("research")
+//                ->where("id",$research_id)
+//                ->find(),
+//        ]);
         $this->assign("prePath",$prePath);
-        $this->assign("nowPath",$nowPath);
-        $this->assign("newPath",$newPath);
-//        <!--<li class="layui-nav-item {if $function=='index'}layui-this{/if}">-->
-        return view("research_dominate");
+        $this->assign("nowPath",$prePath[count($prePath) - 1]);
     }
-    # 只读状态
-    public function readOnly(){
-        trace("readOnly");
-        return view("research_dominate");
+
+    ##############################################################################
+    # 只显示路径
+    protected function directory($catalog,$research_id,$isPjt,$catalogPath){
+        $this->DIR($research_id,$isPjt,$catalogPath);
+        return view("dirOnly");
+//        return $this->manageA($research_id,$isPjt,$catalogPath);
     }
-    # 管理状态
-    public function manageA(){
-        trace("manageA");
-        return view("research_dominate");
+
+    ##############################################################################
+    #下面是一系列功能函数，用于执行不同的功能
+    ##############################################################################
+
+    ##############################################################################
+    # 文件只读A
+    public function readOnlyA($catalog,$research_id,$isPjt,$catalogPath){
+        trace("readOnlyA(research_id = $research_id, isPjt = $isPjt,catalogPath = $catalogPath)");
+        // 转换成JSON，然后进行模板渲染
+        $cols = json_encode($this->cols);
+        $res = Db::name("research")->where("id",$research_id)->find();
+        $project_id = $res['project_id'];
+
+        $pattern = $catalog['container'][0]['container']['catalogPath'];
+        $pattern = explode(',',$pattern);
+        switch ($pattern[0]){
+            case 'research':
+                $pattern[0] = $research_id;
+                break;
+            case 'project':
+                $pattern[0] = $project_id;
+                break;
+            default:
+                print_r($pattern);
+                echo "\n<br>";
+                return "ERROR 0000002";
+
+
+        }
+        $pattern = implode(',',$pattern);
+        trace("Find pattern = ",$pattern);
+
+        $files = Db::name("files")
+            ->where("label LIKE '$pattern%'")
+            ->whereOr("label = '$pattern'")
+            ->field('id,filename,abstract,type,datetime,author')
+            ->order('id',"DESC")
+            ->select();
+        $data_json = json_encode($files);
+        $this->assign([
+            'cols'=>$cols,
+            'data_json'=>$data_json,
+        ]);
+        return view("readOnlyA");
     }
-    public function manageB(){
+
+    ##############################################################################
+    # 文件管理A
+    public function manageA($catalog,$research_id,$isPjt,$catalogPath){
+        trace("manageA(research_id = $research_id, isPjt = $isPjt,catalogPath = $catalogPath)");
+        // 转换成JSON，然后进行模板渲染
+        $cols = json_encode($this->cols);
+        $files = Db::name("files")
+            ->where("label LIKE '$research_id,$catalogPath%'")
+            ->whereOr("label = '$research_id,$catalogPath'")
+            ->field('id,filename,abstract,type,datetime,author')
+            ->order('id',"DESC")
+            ->select();
+        $data_json = json_encode($files);
+        $this->assign([
+            'cols'=>$cols,
+            'data_json'=>$data_json,
+        ]);
+        return view("manageA");
+    }
+
+    ##############################################################################
+    # 文件管理B
+    public function manageB($catalog,$research_id,$isPjt,$catalogPath){
         trace("manageB");
         return view("research_dominate");
     }
 
+    ##############################################################################
+    # 课题管理
+    public function manageResearch($catalog,$research_id,$isPjt,$catalogPath){
+        trace("manageResearch(research = $research_id,isPjt = $isPjt, catalogPath = $catalogPath)");
+        assert($isPjt);
+        $researches = Db::name("research")
+            ->where("project_id",$research_id)
+            ->paginate(10);
+        $this->assign([
+            "data"=>$researches,
+        ]);
+        return view("manageResearch");
+    }
 
 //    public function research_dominate($research_id,$conference_id = null,$function=null,$request_id = null){
 //        $this->setAuthority(1);
