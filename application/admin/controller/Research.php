@@ -47,7 +47,7 @@ class Research extends Listfile {
             'data'=>$data,
         ]);
     }
-    public function research_dominate($research_id,$catalogPath = ""){
+    public function research_dominate($research_id,$catalogPath = "0"){
         # 这里根据catalog分析一堆路径
 //        print_r($catalogPath);
         str_replace("%2C",",",$catalogPath);
@@ -256,102 +256,11 @@ class Research extends Listfile {
         return view("manageResearch");
     }
 
-//    public function research_dominate($research_id,$conference_id = null,$function=null,$request_id = null){
-//        $this->setAuthority(1);
-//        $data = Db::name('files')
-//            ->where('type',"research:$research_id")
-//            ->order('id','DESC')
-//            ->select();
-//        trace("research:$research_id");
-//        $research = Db::name('research')
-//            ->where(['id'=>$research_id])
-//            ->find();
-//        $conference = Db::name('conference')
-//            ->where(['research_id'=>$research_id])
-//            ->order('id','DESC')
-//            ->select();
-//
-//        if($conference_id == null && !empty($conference)){
-//            $conference_id=$conference[0]['id'];
-//        }
-//        if($conference_id != null){
-//            $conference_now = Db::name('conference')->where('id',$conference_id)->find();
-//            //注意,在join中使用__FILES__ = prefix . files, 这是为了避免使用前缀
-//            $request = Db::name('request')
-//                ->alias('a')
-//                ->join('__FILES__ b','a.file_id=b.id','left')
-//                ->field(["a.*","b.filename"])
-//                ->where("a.conference_id",$conference_id)
-//                ->order("a.id","DESC")
-//                ->select();
-////            print_r($data);
-//        } else $conference_now = $request = [];
-//
-//        // 获取项目推送的文件
-//        $pfile = Db::name('pjtpushfile')
-//            ->where('project_id',$research['project_id'])
-//            ->select();
-//        $tmp = [-1];
-//        foreach ($pfile as $v){
-//            $tmp[count($tmp)] = $v['file_id'];
-//        }
-//        $pfile = Db::name('files')
-//            ->where('id','in',$tmp)
-//            ->order('id','DESC')
-//            ->select();
-//
-//
-//        // 获取项目推送的会议
-//        $pconf = Db::name('pjtpushconf')
-//            ->where('project_id',$research['project_id'])
-//            ->where('research_id',$research['id'])
-//            ->select();
-//        $tmp = [-1];
-//        foreach ($pconf as $v){
-//            $tmp[count($tmp)] = $v['conference_id'];
-//        }
-//        $push_conf = $tmp;
-//        $pconf = Db::name('conference')
-//            ->where('id','in',$tmp)
-//            ->order('id','DESC')
-//            ->select();
-//
-//        if($function == 'conf' && in_array($conference_id,$push_conf)){
-//            $function = 'pushconf';
-//        }
-//
-//        // 获取会议文件历史
-//        $history = [];
-//        if(!empty($request_id)){
-//            $req = Db::name('request')->where('id',$request_id)->find();
-//            $history = explode(',',$req['history']);
-//            if(!empty($history))
-//                $history = Db::name('files')
-//                    ->where('id','in',$history)
-//                    ->field('id,filename,abstract,type,datetime,author')
-//                    ->order('id DESC')
-//                    ->select();
-//        }
-//        $history_json = json_encode($history);
-//
-//        $this->assign([
-//            'title'=>'项目课题管理',
-//            'subtitle'=>'课题管理',
-//            'data'=>$data,                      // 文件
-//            'research'=>$research,              // 当前课题
-//            'conference'=>$conference,          // 课题会议
-//            'conference_id'=>$conference_id,    // 当前课题会议id
-//            'conference_now'=>$conference_now,  // 当前会议
-//            'request'=>$request,                // 当前会议的要求
-//            'authority'=>$this->authority,      // 权限
-//            'pfile'=>$pfile,
-//            'pconf'=>$pconf,
-//            'function'=>$function,
-//            'history_json'=>$history_json,
-//            'cols_json'=>json_encode($this->cols),
-//        ]);
-//        return view('research_dominate');
-//    }
+    public function batch_file_delete(){
+        $result = parent::batch_file_delete();
+        if(empty($result))$this->success("删除成功");
+        else $this->error($result);
+    }
 }
 
 

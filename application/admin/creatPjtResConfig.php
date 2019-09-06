@@ -32,26 +32,31 @@ function defCatalog($name,$type = "DIR",$container = null){
 # 这些是一般情况下的几种常用项
 # PDF COMPRESS
 $manageAPC = [
-    defCatalog("manageA","FUN",["text"=>"需上传PDF/压缩包"])
+    defCatalog("manageA","FUN",["text"=>"<h3>需上传PDF/压缩包</h3>"])
 ];
 # PDF WORD
 $manageAPW = [
-    defCatalog("manageA","FUN",["text"=>"需上传PDF/word"])
+    defCatalog("manageA","FUN",["text"=>"<h3>需上传PDF/word</h3>"])
 ];
 # PDF WORD Shao miao
 $manageAPWS = [
-    defCatalog("manageA","FUN",["text"=>"需上传PDF/word/扫描件"])
+    defCatalog("manageA","FUN",["text"=>"<h3>需上传PDF/word/扫描件</h3>"])
 ];
 # Jin Er
 $manageAJE = [
-    defCatalog("manageA","FUN",["text"=>"需上传PDF/word/扫描件<br>请在说明中著明金额"])
+    defCatalog("manageA","FUN",[
+        "text"=>
+            "<h3>需上传PDF/word/扫描件</h3>" .
+            "<h1>请在说明中著明金额</h1>"
+        ]
+    )
 ];
 # Shen Xiang
 $manageASX = [
     defCatalog("manageA","FUN",
         [
             "text"=>
-//            "本页附加说明：<br>" .
+            "<h3>材料包括以下几类<h3>" .
             "党和国家领导人以及上级机关视察、检查专项（项目、课题）工作时形成的声像材料<br>" .
             "召开各类重要会议和重要活动形成的声像材料<br>" .
             "院士、著名科学家、知名人士在重大活动中形成的声像材料<br>" .
@@ -63,7 +68,7 @@ $manageASX = [
 # 这些是会议管理的常用项
 $manageB = [
     defCatalog("manageB","FUN",[
-        "text"=>"需上传PDF/压缩包",
+        "text"=>"<h3>需上传PDF/压缩包</h3>",
         "typeOfFile"=>"['会议通知','会议签到表','汇报PPT','会议纪要','会议照片']",
         ])
 ];
@@ -126,7 +131,7 @@ $Project = defCatalog("项目管理","DIR",[
 ###########################################################################################
 ###########################################################################################
 $Research = defCatalog("课题管理","DIR",[
-    defCatalog("组织管理文件","DIR",[
+    defCatalog("组织管理文件(只读)","DIR",[
         defCatalog("readOnlyA","FUN",[
             "catalogPath"=>"project,0"
         ])
@@ -155,7 +160,7 @@ $Research = defCatalog("课题管理","DIR",[
     defCatalog("会议文件","DIR",[
         defCatalog("2018年","DIR",[
             defCatalog("组内会议","DIR",$manageB),
-            defCatalog("项目组会议","DIR",[
+            defCatalog("项目组会议(只读)","DIR",[
                 defCatalog("readOnlyA","FUN",[
                     'catalogPath'=>"project,3,0,0"
                 ])
