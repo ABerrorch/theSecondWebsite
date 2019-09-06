@@ -62,7 +62,10 @@ $manageASX = [
 ];
 # 这些是会议管理的常用项
 $manageB = [
-    defCatalog("manageB","FUN",["text"=>"需上传PDF/压缩包"])
+    defCatalog("manageB","FUN",[
+        "text"=>"需上传PDF/压缩包",
+        "typeOfFile"=>"['会议通知','会议签到表','汇报PPT','会议纪要','会议照片']",
+        ])
 ];
 
 //print_r($manageAPC);

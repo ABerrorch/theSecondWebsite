@@ -28,13 +28,19 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="file_type">类型</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" style="height: 34px;"
-                                       id="file_type" name="file_type"
-                                       required readonly
-                                       value='undefined'
+                                <!--<input type="text" class="form-control" style="height: 34px;"-->
+                                       <!--id="file_type" name="file_type"-->
+                                       <!--required readonly-->
+                                       <!--value='undefined'-->
+                                <!--&gt;-->
+                                <select type="text" class="form-control" style="height: 34px;"
+                                        id="file_type" name="file_type"
                                 >
+                                    <option value="zhe">这里添加新的option</option>
+                                </select>
                             </div>
                         </div>
+
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="file_abstract">简介</label>
@@ -66,7 +72,14 @@
 <script>
     function uploadFileModal($uploadModalForm,$name="",$type="normal",$abstract = ""){
         $('#file_name').attr("value",$name);
-        $('#file_type').attr("value",$type);
+        $('#file_type').empty();
+        if(Array.isArray($type)){
+            for(let i = 0;i < $type.length;i++){
+                $("#file_type").append("<option value='"+ $type[i] + "'>"+ $type[i] +"</option>");
+            }
+        } else {
+            $("#file_type").append("<option value='"+$type+"'>"+$type+"</option>");
+        }
         $('#file_abstract').attr("value",$abstract);
         $('#uploadModalForm').attr("action",$uploadModalForm);
         $('#add-file').modal('show');

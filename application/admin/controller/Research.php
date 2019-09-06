@@ -238,8 +238,8 @@ class Research extends Listfile {
     ##############################################################################
     # 文件管理B
     public function manageB($catalog,$research_id,$isPjt,$catalogPath){
-        trace("manageB");
-        return view("research_dominate");
+        trace("manageB(research_id = $research_id, isPjt = $isPjt,catalogPath = $catalogPath)");
+        return $this->manageA($catalog,$research_id,$isPjt,$catalogPath);
     }
 
     ##############################################################################

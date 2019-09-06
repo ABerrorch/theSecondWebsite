@@ -87,8 +87,7 @@ class AdminBase extends Base{
                     ["name"=>"角色管理","url"=>'Admin/Rule/rule_group'],
                     ["name"=>"用户管理","url"=>'Admin/User/index'],
                     ["name"=>"文件管理","url"=>'Admin/Listfile/index'],
-                    ["name"=>"LINK","url"=>'Admin/Link/index'],
-                ],
+                    ],
             ],[   "header"=>"项目课题管理",
                 "flag"=>"<i class='fa fa-cog'></i>",
                 "container"=>[
