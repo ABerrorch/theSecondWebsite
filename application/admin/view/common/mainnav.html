@@ -23,7 +23,8 @@
                                                 <i class="dropdown-caret"></i>
                                             </span>
                                 <p class="mnp-name">{$Think.session.user.username|default = 'NULL'}</p>
-                                <span class="mnp-desc">{$Think.session.user.email|default = 'NULL@null.com'}</span>
+                                <!--本来的是打算显示邮箱的，但是后来某些原因关闭了邮箱显示-->
+                                <!--<span class="mnp-desc">{$Think.session.user.email|default = 'NULL@null.com'}</span>-->
                             </a>
                         </div>
                         <div id="profile-nav" class="collapse list-group bg-trans">
@@ -100,12 +101,12 @@
                     <!--================================-->
                     <div class="mainnav-widget">
 
-                        <!-- Show the button on collapsed navigation -->
-                        <div class="show-small">
-                            <a href="#" data-toggle="menu-widget" data-target="#demo-wg-server">
-                                <i class="demo-pli-monitor-2"></i>
-                            </a>
-                        </div>
+                        <!--&lt;!&ndash; Show the button on collapsed navigation &ndash;&gt;-->
+                        <!--<div class="show-small">-->
+                            <!--<a href="#" data-toggle="menu-widget" data-target="#demo-wg-server">-->
+                                <!--<i class="demo-pli-monitor-2"></i>-->
+                            <!--</a>-->
+                        <!--</div>-->
 
                         <!--&lt;!&ndash; 服务器状态 &ndash;&gt;-->
                         <!--<div id="demo-wg-server" class="hide-small mainnav-widget-content">-->

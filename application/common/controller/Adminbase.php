@@ -75,7 +75,7 @@ class AdminBase extends Base{
 
         # Main Navbar 中的列表
         $MainNav = [
-            [   "header"=>"管理设置",
+            [   "header"=>"个人中心",
                 "flag"=>"<i class='demo-psi-split-vertical-2'></i>",
                 "container"=>[
                     ["name"=>"个人中心","url"=>'Admin/User/my_center'],
@@ -93,7 +93,7 @@ class AdminBase extends Base{
                 "flag"=>"<i class='fa fa-cog'></i>",
                 "container"=>[
 //                    ["name"=>"项目管理","url"=>'Admin/Project/index'],
-                    ["name"=>"课题管理","url"=>'Admin/Research/index'],
+                    ["name"=>"项目课题管理","url"=>'Admin/Research/index'],
 //                    ["name"=>"课题文件批量管理","url"=>'Admin/Listfile/batch_file_list_person'],
                 ],
             ],

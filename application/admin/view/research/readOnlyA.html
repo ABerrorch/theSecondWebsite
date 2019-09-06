@@ -94,12 +94,12 @@
                 var checkStatus = table.checkStatus('idTest')
                     ,data = checkStatus.data;
                 // layer.alert(JSON.stringify(data));
-                post("{:url('admin/Listfile/batch_file_download')}",{data:JSON.stringify(data)});
+                post("{:url('admin/Research/batch_file_download')}",{data:JSON.stringify(data)});
             }
             ,deleteFiles: function(){ //获取选中数目
                 var checkStatus = table.checkStatus('idTest')
                     ,data = checkStatus.data;
-                post("{:url('admin/Listfile/batch_file_delete')}",{data:JSON.stringify(data)});
+                post("{:url('admin/Research/batch_file_delete')}",{data:JSON.stringify(data)});
             }
             // ,uploadFile: function(){
             //     uploadFileModal("{:url('admin/Listfile/add_file')}",'',"{$research.id},{$nowPath.catalogPath|default='发生了错误'}")
@@ -107,7 +107,7 @@
             ,uploadFile: function(){
                 uploadFileModal(
                     // "{:url('admin/Listfile/add_file')}",
-                    "/admin/Listfile/add_file/label/" +
+                    "/admin/Research/add_file/label/" +
                     "{$research.id},{$nowPath.catalogPath}",
                     "",
                     "{$nowPath.name}",

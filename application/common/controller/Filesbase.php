@@ -76,10 +76,6 @@ class Filesbase extends AdminBase{
             $result = $result ."<br>" . "[error] Can't unlink File $file_id";
         }
 
-        // 如果该文件被推送过，删除
-        Db::name("pjtpushfile")
-            ->where('file_id',$file_id)
-            ->delete();
 
         // 然后删除数据库中的数据
         $result2 = Db::name('files')->where("id",$file_id)->delete();    //从数据库上删除

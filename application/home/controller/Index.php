@@ -51,6 +51,7 @@ class Index extends Homebase{
      * 注册
      */
     public function register(){
+//        $this->error("现在已经关闭了注册功能");
         $post = $this->request->post();
         if($post){
             $data['username'] = input('post.username');
@@ -63,16 +64,16 @@ class Index extends Homebase{
              */
             // 检查正则是否合理
             /*
-             * 帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$
+             * 帐号是否合法(字母开头，允许5-20字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$
              * 密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w{5,17}$
              * Email地址：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
              */
-            if(!preg_match("/^[a-zA-Z][a-zA-Z0-9_]{4,15}$/",$data['username']))
+            if(!preg_match("/^[a-zA-Z][a-zA-Z0-9_]{4,19}$/",$data['username']))
                 $this->error("账号正则错误，请检查输入是否正确");
             if(!preg_match("/^\\w{6,18}$/",input('post.password')))
                 $this->error("密码正则错误，请检查输入是否正确");
-            if(!preg_match("/^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/",$data['email']))
-                $this->error("邮箱正则错误，请检查输入是否正确");
+//            if(!preg_match("/^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/",$data['email']))
+//                $this->error("邮箱正则错误，请检查输入是否正确");
             // 检查账号是否存在
             $account = Db::name('users')->where('username',$data['username'])->select();
             if(!empty($account))

@@ -51,7 +51,7 @@ $manageASX = [
     defCatalog("manageA","FUN",
         [
             "text"=>
-            "本页附加说明：<br>" .
+//            "本页附加说明：<br>" .
             "党和国家领导人以及上级机关视察、检查专项（项目、课题）工作时形成的声像材料<br>" .
             "召开各类重要会议和重要活动形成的声像材料<br>" .
             "院士、著名科学家、知名人士在重大活动中形成的声像材料<br>" .
@@ -65,6 +65,7 @@ $manageB = [
     defCatalog("manageB","FUN",["text"=>"需上传PDF/压缩包"])
 ];
 
+//print_r($manageAPC);
 
 $Project = defCatalog("项目管理","DIR",[
     defCatalog("组织管理文件"),
@@ -73,48 +74,48 @@ $Project = defCatalog("项目管理","DIR",[
     ]),
     defCatalog("科研文件","DIR",[
         defCatalog("研究准备阶段","DIR",[
-            defCatalog("课题任务书"),
-            defCatalog("实施协议"),
-            defCatalog("技术合同"),
+            defCatalog("课题任务书","DIR",$manageAPC),
+            defCatalog("实施协议","DIR",$manageAPC),
+            defCatalog("技术合同","DIR",$manageAPC),
         ]),
         defCatalog("研究实施阶段","DIR",[
-            defCatalog("工作计划和总结"),
-            defCatalog("研究数据/报告/实验记录等技术文档"),
+            defCatalog("工作计划和总结","DIR",$manageAPW),
+            defCatalog("研究数据/报告/实验记录等技术文档","DIR",$manageAPW),
         ]),
         defCatalog("研究验收阶段","DIR",[
-            defCatalog("结题报告"),
-            defCatalog("审计报告"),
-            defCatalog("验收材料"),
+            defCatalog("结题报告","DIR",$manageAPW),
+            defCatalog("审计报告","DIR",$manageAPW),
+            defCatalog("验收材料","DIR",$manageAPW),
         ]),
         defCatalog("研究成果材料","DIR",[
-            defCatalog("专利专著等"),
-            defCatalog("参观考察等"),
-            defCatalog("媒体宣传等"),
+            defCatalog("论文专著、专利、评奖、第三方检测报告等科技成果","DIR",$manageAPWS),
+            defCatalog("参观、考察、调研等资料","DIR",$manageAPWS),
+            defCatalog("媒体宣传报道材料","DIR",$manageAPWS),
         ]),
     ]),
     defCatalog("会议文件","DIR",[
         defCatalog("2018年","DIR",[
-            defCatalog("组内会议"),
+            defCatalog("组内会议","DIR",$manageB),
         ]),
         defCatalog("2019年","DIR",[
-            defCatalog("组内会议"),
+            defCatalog("组内会议","DIR",$manageB),
         ]),
         defCatalog("2020年","DIR",[
-            defCatalog("组内会议"),
+            defCatalog("组内会议","DIR",$manageB),
         ]),
         defCatalog("2021年","DIR",[
-            defCatalog("组内会议"),
+            defCatalog("组内会议","DIR",$manageB),
         ]),
         defCatalog("2022年","DIR",[
-            defCatalog("组内会议"),
+            defCatalog("组内会议","DIR",$manageB),
         ]),
     ]),
     defCatalog("声像文件","DIR",[
-            defCatalog("2018年"),
-            defCatalog("2019年"),
-            defCatalog("2020年"),
-            defCatalog("2021年"),
-            defCatalog("2022年"),
+            defCatalog("2018年","DIR",$manageASX),
+            defCatalog("2019年","DIR",$manageASX),
+            defCatalog("2020年","DIR",$manageASX),
+            defCatalog("2021年","DIR",$manageASX),
+            defCatalog("2022年","DIR",$manageASX ),
         ]
     ),
 ]);
@@ -219,3 +220,8 @@ $json_string = json_encode($catalog);
 
 // 写入文件
 file_put_contents('catalog.json', $json_string);
+
+//print_r($Project);
+print_r($manageB);
+print_r($manageASX);
+print_r($manageAJE);

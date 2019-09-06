@@ -227,7 +227,11 @@ class Research extends Listfile {
         $this->assign([
             'cols'=>$cols,
             'data_json'=>$data_json,
+            'catalog'=>$catalog,
         ]);
+//        echo "<pre>";
+//        print_r($catalog);
+//        echo "</pre>";
         return view("manageA");
     }
 

@@ -37,10 +37,9 @@
                                 <thead>
                                 <tr>
                                     <th width="5%">ID</th>
-                                    <th width="30%">项目/课题名称</th>
-                                    <th width="30%">类别</th>
-                                    <th width="25%">负责人</th>
-                                    <th width="10%"></th>
+                                    <th width="50%">项目/课题名称</th>
+                                    <th width="10%">类别</th>
+                                    <th width="35%">负责人</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -71,19 +70,6 @@
 												echo $tmp;
 											} else {
 												echo "没有负责人";
-											}
-										?>
-                                    </td>
-                                    <td>
-                                        <?php
-											// 这个地方是用来处理替换中文符号，并且能够实现在人数很多的时候自动换行
-											// 因为浏览器会把连续的英文字符和逗号视为一个单词所以必须分开
-											if(!empty($vo['teammate'])){
-												$tmp = preg_replace("/，/",", ",$vo['teammate']);
-												$tmp = preg_replace("/,/",", ",$tmp);
-												echo $tmp;
-											} else {
-												echo "没有成员";
 											}
 										?>
                                     </td>
