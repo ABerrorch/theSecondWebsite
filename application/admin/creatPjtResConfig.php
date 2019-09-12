@@ -47,7 +47,7 @@ $manageAJE = [
     defCatalog("manageA","FUN",[
         "text"=>
             "<h3>需上传PDF/word/扫描件</h3>" .
-            "<h1>请在说明中著明金额</h1>"
+            "<h1><div style=\"color:#F00\">请在说明中著明金额</div></h1>"
         ]
     )
 ];
