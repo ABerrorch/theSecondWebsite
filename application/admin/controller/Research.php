@@ -11,6 +11,7 @@ use think\Auth;
 use think\Db;
 use think\Request;
 use think\Session;
+use ZipArchive;
 
 class Research extends Listfile {
     protected $authority;
@@ -260,6 +261,77 @@ class Research extends Listfile {
         $result = parent::batch_file_delete();
         if(empty($result))$this->success("删除成功");
         else $this->error($result);
+    }
+    public function download_entirely($research_id){
+        $files = Db::name("files")
+            ->where("label LIKE '$research_id%'")
+            ->select();
+        $research = Db::name("research")->where("id",$research_id)->find();
+        $isPjt = $research['isPjt'];
+        $zip = new ZipArchive;
+        $zipName = ROOT_PATH . 'runtime' . DS . "download.zip";
+
+        $result = '';
+
+        if ($zip->open($zipName,ZipArchive::CREATE|ZipArchive::OVERWRITE ) === TRUE) {
+            //-------添加文件---------------------------
+            $inHere = [];//用于判断文件是否已经被添加进入zip
+            foreach ($files as $key => $data){
+                // 这里一定要重新从数据库中读取
+                // 这是因为在file对象中，并没有保存path数据
+                $file_id = $data['id'];
+                $filename = $data['path'];      // {$filename} = {$data}/{$filename_}
+                $pattern = '/[^\\.]*$/';        //差点没把我气死
+                $isMatched = preg_match($pattern, $filename, $filename_);
+                if($isMatched)
+                    $filename_ = $data['filename'] . '.' . $filename_[0];
+                else// 虽然由于框架问题,好像本身就不能上传没有后缀的文件,但是这里还是进行判断吧
+                    $filename_ = $data['filename'];
+                // 这里有一个非常弱智的问题
+                // 在linux中，文件夹的分隔符为/,window为\
+                // 这导致了存储的文件路径可能不兼容
+                // 为了兼容，我只能把路径中的所有/或者\替换成 DS（PHP自带的分隔符常量）
+                // 注意下面经过两次转义\\/\\\\ 第一次-> \/\\ 第二次-> /\
+                $filePath =
+                    preg_replace('/[\\/\\\\]/', DS, path . DS . $filename);
+                trace($filePath);
+                if(!file_exists($filePath)){
+                    $result = $result . "无法寻找文件$filename_";
+                } else {
+                    if(isset($inHere[$filename_])){
+                        $filename_ = "[$file_id] ". $filename_;
+                    }
+                    $inHere[$filename_] = 1;
+
+                    $catalog = $this->catalog;
+                    $catalog = $isPjt?$catalog['project']:$catalog['research'];
+                    $label = $data['label'];
+                    $catalogPath = explode(',',$label);
+                    $addPath = "";
+                    for($i = 1;$i < count($catalogPath);$i++){
+                        $pos = $catalogPath[$i];
+                        $catalog = $catalog['container']["$pos"];
+                        $addPath = $addPath . $catalog['name'] . DS;
+                    }
+
+                    $zip->addFile($filePath, $addPath . $filename_);
+                    trace("ADD File To Batch : $filename_");
+                }
+            }
+            $zip->close();
+            //-------打包下载----------------------------
+            header('Content-Type: application/zip');
+            header('Content-disposition: attachment; filename=download.zip');
+            header('Content-Length: ' . filesize($zipName));
+            $tmp = fopen($zipName,"r");
+            echo fread($tmp, filesize($zipName));
+            fclose($tmp);
+            unlink($zipName);
+            if(!empty($result))
+                $this->error($result);
+        } else {
+            $this->error("未知错误,下载失败");
+        }
     }
 }
 

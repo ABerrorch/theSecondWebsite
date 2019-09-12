@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d711464-a2d6-4cff-a6a2-90fad9753e83" name="Default" comment="" />
+    <list default="true" id="9d711464-a2d6-4cff-a6a2-90fad9753e83" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/Research.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/Research.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/research/catalogPath.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/research/catalogPath.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/view/research/manageResearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/view/research/manageResearch.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,32 +18,89 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="creatPjtResConfig.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php">
+      <file leaf-file-name="Listfile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/controller/Listfile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="39" column="2" lean-forward="true" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+            <state relative-caret-position="-1610">
+              <caret line="18" selection-start-line="18" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Filesbase.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/common/controller/Filesbase.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1316">
+              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manageResearch.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageResearch.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="78" column="81" selection-start-line="78" selection-start-column="64" selection-end-line="78" selection-end-column="81" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#h1#0;n#!!top" expanded="true" />
+                <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#script#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/home/controller/Index.php">
+      <file leaf-file-name="Research.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/controller/Research.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+            <state relative-caret-position="218">
+              <caret line="264" column="52" lean-forward="true" selection-start-line="264" selection-start-column="52" selection-end-line="264" selection-end-column="52" />
+              <folding>
+                <element signature="e#340#729#0#PHP" />
+                <element signature="e#957#1515#0#PHP" />
+                <element signature="e#1083#1290#0#PHP" />
+                <element signature="e#1083#1323#0#PHP" />
+                <element signature="e#1083#1350#0#PHP" />
+                <element signature="e#1393#1508#0#PHP" />
+                <element signature="e#1406#1507#0#PHP" />
+                <element signature="e#1520#2328#0#PHP" />
+                <element signature="e#2451#3732#0#PHP" />
+                <element signature="e#3834#5709#0#PHP" />
+                <element signature="e#5810#6041#0#PHP" />
+                <element signature="e#6335#7676#0#PHP" />
+                <element signature="e#7777#8583#0#PHP" />
+                <element signature="e#8684#8928#0#PHP" />
+                <element signature="e#9028#9459#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
+      <file leaf-file-name="dirOnly.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/research/dirOnly.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+            <state relative-caret-position="207">
+              <caret line="9" selection-start-line="9" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="catalogPath.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/research/catalogPath.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="creatPjtResConfig.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#h1#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,9 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>file_abstract</find>
-      <find>directory</find>
-      <find>type</find>
       <find>$research_id</find>
       <find>find</find>
       <find>ERROR</find>
@@ -85,6 +143,9 @@
       <find>batch_file_delete</find>
       <find>使用说明</find>
       <find>注册</find>
+      <find>file</find>
+      <find>label</find>
+      <find>$catalog['container']</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -110,11 +171,9 @@
         <option value="$PROJECT_DIR$/application/admin/view/research/research_dominate.html" />
         <option value="$PROJECT_DIR$/application/admin/test.php" />
         <option value="$PROJECT_DIR$/application/admin/view/research/dirOnly.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/research/catalogPath.html" />
         <option value="$PROJECT_DIR$/application/home/view/index/register.html" />
         <option value="$PROJECT_DIR$/application/admin/view/common/mainnav.html" />
         <option value="$PROJECT_DIR$/application/admin/view/research/index.html" />
-        <option value="$PROJECT_DIR$/application/admin/view/research/manageResearch.html" />
         <option value="$PROJECT_DIR$/application/admin/view/research/Explanation.html" />
         <option value="$PROJECT_DIR$/application/admin/view/research/readOnlyA.html" />
         <option value="$PROJECT_DIR$/application/common/controller/Adminbase.php" />
@@ -122,10 +181,12 @@
         <option value="$PROJECT_DIR$/application/common/controller/Filesbase.php" />
         <option value="$PROJECT_DIR$/application/admin/view/research/manageB.html" />
         <option value="$PROJECT_DIR$/application/admin/view/research/manageA.html" />
-        <option value="$PROJECT_DIR$/application/admin/controller/Research.php" />
         <option value="$PROJECT_DIR$/application/admin/view/index/index.html" />
         <option value="$PROJECT_DIR$/application/admin/creatPjtResConfig.php" />
         <option value="$PROJECT_DIR$/application/home/controller/Index.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/research/catalogPath.html" />
+        <option value="$PROJECT_DIR$/application/admin/view/research/manageResearch.html" />
+        <option value="$PROJECT_DIR$/application/admin/controller/Research.php" />
       </list>
     </option>
   </component>
@@ -350,12 +411,12 @@
       <workItem from="1567509387087" duration="29256000" />
       <workItem from="1567648580650" duration="22409000" />
       <workItem from="1567732715415" duration="16418000" />
-      <workItem from="1568277513071" duration="1625000" />
+      <workItem from="1568277513071" duration="5527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69708000" />
+    <option name="totallyTimeSpent" value="73610000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -374,7 +435,7 @@
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32952926" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2467903" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14835949" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.46647647" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26541555" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -517,6 +578,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#script#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -664,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageResearch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="41" column="60" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/catalog.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-58">
@@ -685,31 +743,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/catalogPath.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/research/dirOnly.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/research/readOnlyA.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/controller/Filesbase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="44" column="21" selection-start-line="36" selection-start-column="3" selection-end-line="59" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -754,10 +791,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/home/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/controller/Filesbase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1316">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/Listfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1610">
+          <caret line="18" selection-start-line="18" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#h1#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/dirOnly.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" selection-start-line="9" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/catalogPath.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/research/manageResearch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="78" column="81" selection-start-line="78" selection-start-column="64" selection-end-line="78" selection-end-column="81" />
+          <folding>
+            <element signature="n#ol#0;n#div#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#script#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/controller/Research.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="261" selection-start-line="261" selection-end-line="261" />
+        <state relative-caret-position="218">
+          <caret line="264" column="52" lean-forward="true" selection-start-line="264" selection-start-column="52" selection-end-line="264" selection-end-column="52" />
           <folding>
             <element signature="e#340#729#0#PHP" />
             <element signature="e#957#1515#0#PHP" />
@@ -775,37 +875,6 @@
             <element signature="e#8684#8928#0#PHP" />
             <element signature="e#9028#9459#0#PHP" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/Listfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2012">
-          <caret line="188" column="37" selection-start-line="188" selection-start-column="20" selection-end-line="188" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/creatPjtResConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="39" column="2" lean-forward="true" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#h1#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/home/controller/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="101" column="7" lean-forward="true" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
         </state>
       </provider>
     </entry>
